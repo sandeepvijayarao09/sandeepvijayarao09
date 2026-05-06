@@ -3,745 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery — Photography</title>
-  <style>
-    /* ─── Design Tokens ────────────────────────────────────────────── */
-    :root {
-      /* Brand & Accent */
-      --primary:              #0066cc;
-      --primary-focus:        #0071e3;
-      --primary-on-dark:      #2997ff;
-
-      /* Ink */
-      --ink:                  #1d1d1f;
-      --body:                 #1d1d1f;
-      --body-on-dark:         #ffffff;
-      --body-muted:           #cccccc;
-      --ink-muted-80:         #333333;
-      --ink-muted-48:         #7a7a7a;
-
-      /* Hairlines */
-      --divider-soft:         #f0f0f0;
-      --hairline:             #e0e0e0;
-
-      /* Surfaces */
-      --canvas:               #ffffff;
-      --canvas-parchment:     #f5f5f7;
-      --surface-pearl:        #fafafc;
-      --surface-tile-1:       #272729;
-      --surface-tile-2:       #2a2a2c;
-      --surface-tile-3:       #252527;
-      --surface-black:        #000000;
-      --surface-chip:         #d2d2d7;
-
-      /* On */
-      --on-primary:           #ffffff;
-      --on-dark:              #ffffff;
-
-      /* Radius */
-      --r-none:  0px;
-      --r-xs:    5px;
-      --r-sm:    8px;
-      --r-md:    11px;
-      --r-lg:    18px;
-      --r-pill:  9999px;
-      --r-full:  9999px;
-
-      /* Spacing */
-      --sp-xxs: 4px;
-      --sp-xs:  8px;
-      --sp-sm:  12px;
-      --sp-md:  17px;
-      --sp-lg:  24px;
-      --sp-xl:  32px;
-      --sp-xxl: 48px;
-      --sp-sec: 80px;
-
-      /* Product shadow — only for product imagery */
-      --product-shadow: rgba(0,0,0,.22) 3px 5px 30px 0;
-    }
-
-    /* ─── Reset ────────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.47;
-      letter-spacing: -0.374px;
-      color: var(--body);
-      background: var(--canvas);
-      -webkit-font-smoothing: antialiased;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button { cursor: pointer; border: none; background: none; font: inherit; }
-
-    /* ─── Typography helpers ───────────────────────────────────────── */
-    .t-hero {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 56px; font-weight: 600;
-      line-height: 1.07; letter-spacing: -0.28px;
-    }
-    .t-display-lg {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 40px; font-weight: 600;
-      line-height: 1.10; letter-spacing: 0;
-    }
-    .t-display-md {
-      font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-      font-size: 34px; font-weight: 600;
-      line-height: 1.47; letter-spacing: -0.374px;
-    }
-    .t-lead {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 28px; font-weight: 400;
-      line-height: 1.14; letter-spacing: 0.196px;
-    }
-    .t-lead-airy {
-      font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-      font-size: 24px; font-weight: 300;
-      line-height: 1.5; letter-spacing: 0;
-    }
-    .t-tagline {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 21px; font-weight: 600;
-      line-height: 1.19; letter-spacing: 0.231px;
-    }
-    .t-body-strong {
-      font-size: 17px; font-weight: 600;
-      line-height: 1.24; letter-spacing: -0.374px;
-    }
-    .t-caption {
-      font-size: 14px; font-weight: 400;
-      line-height: 1.43; letter-spacing: -0.224px;
-    }
-    .t-caption-strong {
-      font-size: 14px; font-weight: 600;
-      line-height: 1.29; letter-spacing: -0.224px;
-    }
-    .t-fine-print {
-      font-size: 12px; font-weight: 400;
-      line-height: 1.0; letter-spacing: -0.12px;
-    }
-    .t-nav-link {
-      font-size: 12px; font-weight: 400;
-      line-height: 1.0; letter-spacing: -0.12px;
-    }
-
-    /* ─── Global Nav ───────────────────────────────────────────────── */
-    .global-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--surface-black);
-      height: 44px;
-      display: flex;
-      align-items: center;
-      padding: 0 22px;
-    }
-    .global-nav__inner {
-      width: 100%;
-      max-width: 1440px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .global-nav__logo svg {
-      width: 18px; height: 22px;
-      fill: var(--on-dark);
-    }
-    .global-nav__links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      list-style: none;
-    }
-    .global-nav__links a {
-      color: rgba(255,255,255,.85);
-      font-size: 12px;
-      line-height: 1;
-      letter-spacing: -0.12px;
-      transition: color .2s;
-    }
-    .global-nav__links a:hover { color: var(--on-dark); }
-    .global-nav__actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .global-nav__icon-btn {
-      width: 16px; height: 16px;
-      color: rgba(255,255,255,.85);
-      display: flex; align-items: center; justify-content: center;
-      transition: color .2s;
-    }
-    .global-nav__icon-btn:hover { color: var(--on-dark); }
-    .global-nav__icon-btn svg { width: 14px; height: 14px; fill: currentColor; }
-
-    /* ─── Sub Nav ──────────────────────────────────────────────────── */
-    .sub-nav {
-      position: fixed;
-      top: 44px; left: 0; right: 0;
-      z-index: 99;
-      background: rgba(245,245,247,.8);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,.08);
-      height: 52px;
-      display: flex;
-      align-items: center;
-      padding: 0 22px;
-    }
-    .sub-nav__inner {
-      width: 100%;
-      max-width: 1440px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .sub-nav__category {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 21px; font-weight: 600;
-      line-height: 1.19; letter-spacing: 0.231px;
-      color: var(--ink);
-    }
-    .sub-nav__links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-    }
-    .sub-nav__links a {
-      font-size: 14px; font-weight: 400;
-      letter-spacing: -0.224px;
-      color: var(--ink);
-      transition: color .2s;
-    }
-    .sub-nav__links a:hover { color: var(--primary); }
-
-    /* ─── Buttons ──────────────────────────────────────────────────── */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: var(--on-primary);
-      font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-      font-size: 17px; font-weight: 400;
-      line-height: 1.47; letter-spacing: -0.374px;
-      border-radius: var(--r-pill);
-      padding: 11px 22px;
-      transition: transform .12s, background .15s;
-      outline-offset: 3px;
-    }
-    .btn-primary:hover { background: var(--primary-focus); }
-    .btn-primary:active { transform: scale(.95); }
-    .btn-primary:focus-visible { outline: 2px solid var(--primary-focus); }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      color: var(--primary);
-      font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-      font-size: 17px; font-weight: 400;
-      line-height: 1.47; letter-spacing: -0.374px;
-      border-radius: var(--r-pill);
-      padding: 11px 22px;
-      border: 1px solid var(--primary);
-      transition: transform .12s;
-      outline-offset: 3px;
-    }
-    .btn-secondary:hover { background: rgba(0,102,204,.06); }
-    .btn-secondary:active { transform: scale(.95); }
-    .btn-secondary:focus-visible { outline: 2px solid var(--primary-focus); }
-
-    .btn-secondary-dark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      color: var(--primary-on-dark);
-      font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-      font-size: 17px; font-weight: 400;
-      line-height: 1.47; letter-spacing: -0.374px;
-      border-radius: var(--r-pill);
-      padding: 11px 22px;
-      border: 1px solid var(--primary-on-dark);
-      transition: transform .12s;
-      outline-offset: 3px;
-    }
-    .btn-secondary-dark:hover { background: rgba(41,151,255,.1); }
-    .btn-secondary-dark:active { transform: scale(.95); }
-
-    .btn-store-hero {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: var(--on-primary);
-      font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-      font-size: 18px; font-weight: 300;
-      line-height: 1.0; letter-spacing: 0;
-      border-radius: var(--r-pill);
-      padding: 14px 28px;
-      transition: transform .12s, background .15s;
-    }
-    .btn-store-hero:hover { background: var(--primary-focus); }
-    .btn-store-hero:active { transform: scale(.95); }
-
-    .text-link {
-      color: var(--primary);
-      font-size: 17px;
-      text-decoration: none;
-      transition: opacity .15s;
-    }
-    .text-link:hover { opacity: .8; }
-    .text-link--dark {
-      color: var(--primary-on-dark);
-    }
-
-    .btn-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: var(--sp-sm);
-      margin-top: var(--sp-lg);
-    }
-
-    /* ─── Main offset (nav height) ─────────────────────────────────── */
-    .page-body {
-      padding-top: 96px; /* 44 + 52 */
-    }
-
-    /* ─── Product Tile base ─────────────────────────────────────────── */
-    .tile {
-      width: 100%;
-      padding: var(--sp-sec) var(--sp-lg);
-      text-align: center;
-      overflow: hidden;
-    }
-    .tile__inner {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-    .tile--light  { background: var(--canvas); color: var(--ink); }
-    .tile--parchment { background: var(--canvas-parchment); color: var(--ink); }
-    .tile--dark   { background: var(--surface-tile-1); color: var(--on-dark); }
-    .tile--dark-2 { background: var(--surface-tile-2); color: var(--on-dark); }
-    .tile--dark-3 { background: var(--surface-tile-3); color: var(--on-dark); }
-    .tile--black  { background: var(--surface-black); color: var(--on-dark); }
-
-    .tile__eyebrow {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 21px; font-weight: 600;
-      letter-spacing: 0.231px; line-height: 1.19;
-      margin-bottom: var(--sp-xs);
-    }
-    .tile__headline {
-      margin-bottom: var(--sp-sm);
-    }
-    .tile__tagline {
-      margin-bottom: var(--sp-lg);
-    }
-
-    /* Product image with the signature shadow */
-    .tile__product-img {
-      margin: var(--sp-xxl) auto 0;
-      max-width: 600px;
-      filter: drop-shadow(var(--product-shadow));
-    }
-    .tile__product-img--wide {
-      max-width: 900px;
-    }
-    .tile__product-img--sm {
-      max-width: 340px;
-    }
-
-    /* SVG product stand-ins */
-    .product-svg {
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* ─── Hero Tile ─────────────────────────────────────────────────── */
-    .tile--hero {
-      padding-top: 100px;
-      padding-bottom: 0;
-      background: var(--canvas-parchment);
-    }
-    .tile--hero .tile__inner {
-      max-width: 1440px;
-    }
-    .tile--hero .tile__headline {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 56px; font-weight: 600;
-      line-height: 1.07; letter-spacing: -0.28px;
-    }
-    .tile--hero .tile__product-img {
-      max-width: 100%;
-      margin-top: var(--sp-sec);
-    }
-
-    /* ─── Environment / Quote Card ──────────────────────────────────── */
-    .env-card {
-      position: relative;
-      width: 100%;
-      min-height: 600px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: var(--sp-sec) var(--sp-lg);
-      text-align: center;
-      background: var(--surface-tile-1);
-      color: var(--on-dark);
-      overflow: hidden;
-    }
-    .env-card__bg {
-      position: absolute;
-      inset: 0;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      opacity: .55;
-    }
-    .env-card__content {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-    }
-    .env-card__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: var(--sp-lg);
-      padding: 6px 14px;
-      border-radius: var(--r-pill);
-      border: 1px solid rgba(255,255,255,.3);
-      font-size: 12px; letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--on-dark);
-    }
-    .env-card__badge svg { width: 14px; height: 14px; fill: currentColor; }
-
-    /* ─── Store Utility Grid ────────────────────────────────────────── */
-    .store-section {
-      background: var(--canvas-parchment);
-      padding: var(--sp-sec) var(--sp-lg);
-    }
-    .store-section__inner {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-    .store-section__head {
-      text-align: center;
-      margin-bottom: var(--sp-xxl);
-    }
-    .store-section__head h2 {
-      font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
-      font-size: 40px; font-weight: 600;
-      line-height: 1.10; letter-spacing: 0;
-      color: var(--ink);
-      margin-bottom: var(--sp-sm);
-    }
-    .store-section__head p {
-      color: var(--ink-muted-48);
-    }
-
-    .utility-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--sp-lg);
-    }
-
-    .utility-card {
-      background: var(--canvas);
-      border: 1px solid var(--hairline);
-      border-radius: var(--r-lg);
-      padding: var(--sp-lg);
-      display: flex;
-      flex-direction: column;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .utility-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0,0,0,.08);
-    }
-    .utility-card__img-wrap {
-      border-radius: var(--r-sm);
-      overflow: hidden;
-      background: var(--canvas-parchment);
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: var(--sp-lg);
-    }
-    .utility-card__img-wrap svg {
-      width: 60%;
-      height: 60%;
-    }
-    .utility-card__name {
-      font-weight: 600;
-      font-size: 17px;
-      line-height: 1.24;
-      letter-spacing: -0.374px;
-      color: var(--ink);
-      margin-bottom: var(--sp-xxs);
-    }
-    .utility-card__desc {
-      font-size: 14px;
-      color: var(--ink-muted-48);
-      line-height: 1.43;
-      letter-spacing: -0.224px;
-      flex: 1;
-      margin-bottom: var(--sp-sm);
-    }
-    .utility-card__price {
-      font-size: 17px;
-      color: var(--ink);
-      margin-bottom: var(--sp-sm);
-    }
-
-    /* ─── Configurator Chips ─────────────────────────────────────────── */
-    .config-section {
-      background: var(--canvas);
-      padding: var(--sp-sec) var(--sp-lg);
-    }
-    .config-section__inner {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .config-section__head {
-      text-align: center;
-      margin-bottom: var(--sp-xxl);
-    }
-    .config-label {
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--ink-muted-48);
-      margin-bottom: var(--sp-sm);
-    }
-    .chip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--sp-sm);
-      margin-bottom: var(--sp-xl);
-    }
-    .chip {
-      background: var(--canvas);
-      border: 1px solid var(--hairline);
-      border-radius: var(--r-pill);
-      padding: 12px 16px;
-      font-size: 14px;
-      letter-spacing: -0.224px;
-      color: var(--ink);
-      cursor: pointer;
-      transition: border-color .15s, transform .1s;
-    }
-    .chip:hover { border-color: var(--ink-muted-48); }
-    .chip:active { transform: scale(.97); }
-    .chip--selected {
-      border: 2px solid var(--primary-focus);
-      color: var(--ink);
-    }
-    .chip__label { display: block; }
-    .chip__price { display: block; font-size: 12px; color: var(--ink-muted-48); margin-top: 2px; }
-
-    /* ─── Search Input ────────────────────────────────────────────────── */
-    .search-wrap {
-      position: relative;
-      max-width: 400px;
-      margin: 0 auto var(--sp-xxl);
-    }
-    .search-icon {
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 14px; height: 14px;
-      fill: var(--ink-muted-48);
-      pointer-events: none;
-    }
-    .search-input {
-      width: 100%;
-      background: var(--canvas);
-      color: var(--ink);
-      font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
-      font-size: 17px; font-weight: 400;
-      line-height: 1.47; letter-spacing: -0.374px;
-      border: 1px solid rgba(0,0,0,.08);
-      border-radius: var(--r-pill);
-      padding: 12px 20px 12px 40px;
-      height: 44px;
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .search-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0,102,204,.15);
-    }
-
-    /* ─── Floating Sticky Bar ─────────────────────────────────────────── */
-    .sticky-bar {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      z-index: 98;
-      background: rgba(245,245,247,.8);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-top: 1px solid rgba(0,0,0,.08);
-      height: 64px;
-      padding: 0 var(--sp-xl);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transform: translateY(100%);
-      transition: transform .3s ease;
-    }
-    .sticky-bar--visible { transform: translateY(0); }
-    .sticky-bar__label { color: var(--ink); }
-    .sticky-bar__price {
-      font-weight: 600;
-    }
-
-    /* ─── Icon Circular Button ────────────────────────────────────────── */
-    .icon-circular {
-      width: 44px; height: 44px;
-      border-radius: var(--r-full);
-      background: rgba(210,210,215,.64);
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: transform .12s, background .15s;
-    }
-    .icon-circular:hover { background: rgba(210,210,215,.8); }
-    .icon-circular:active { transform: scale(.95); }
-    .icon-circular svg { width: 16px; height: 16px; fill: var(--ink); }
-
-    /* ─── Footer ─────────────────────────────────────────────────────── */
-    footer {
-      background: var(--canvas-parchment);
-      border-top: 1px solid var(--hairline);
-      padding: 64px var(--sp-lg) 32px;
-      color: var(--ink-muted-80);
-    }
-    .footer__inner {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-    .footer__cols {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: var(--sp-xl);
-      margin-bottom: var(--sp-xxl);
-    }
-    .footer__col h3 {
-      font-size: 14px; font-weight: 600;
-      line-height: 1.29; letter-spacing: -0.224px;
-      color: var(--ink-muted-80);
-      margin-bottom: var(--sp-sm);
-    }
-    .footer__col ul {
-      list-style: none;
-    }
-    .footer__col ul li a {
-      font-size: 17px; font-weight: 400;
-      line-height: 2.41; letter-spacing: 0;
-      color: var(--ink-muted-80);
-      display: block;
-      transition: color .15s;
-    }
-    .footer__col ul li a:hover { color: var(--primary); }
-    .footer__legal {
-      border-top: 1px solid var(--hairline);
-      padding-top: var(--sp-lg);
-      font-size: 12px; line-height: 1.0; letter-spacing: -0.12px;
-      color: var(--ink-muted-48);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: var(--sp-sm);
-    }
-    .footer__legal-links {
-      display: flex; gap: var(--sp-lg);
-      list-style: none;
-    }
-    .footer__legal-links a {
-      color: var(--ink-muted-48);
-      transition: color .15s;
-    }
-    .footer__legal-links a:hover { color: var(--primary); }
-
-    /* ─── Camera SVG helpers ─────────────────────────────────────────── */
-    .lens-ring { fill: none; stroke: currentColor; }
-
-    /* ─── Two-up section ──────────────────────────────────────────────── */
-    .two-up {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-    .two-up .tile {
-      padding: var(--sp-sec) var(--sp-xxl);
-    }
-    .two-up .tile .tile__inner {
-      max-width: 100%;
-    }
-
-    /* ─── Divider ────────────────────────────────────────────────────── */
-    .divider {
-      height: 1px;
-      background: var(--hairline);
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    /* ─── Responsive ─────────────────────────────────────────────────── */
-    @media (max-width: 1068px) {
-      .tile--hero .tile__headline { font-size: 40px; letter-spacing: 0; }
-      .utility-grid { grid-template-columns: repeat(3, 1fr); }
-      .footer__cols { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 833px) {
-      .global-nav__links { display: none; }
-      .sub-nav__links { display: none; }
-      .two-up { grid-template-columns: 1fr; }
-      .utility-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer__cols { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 640px) {
-      .tile--hero .tile__headline { font-size: 34px; }
-      .tile { padding: var(--sp-xxl) var(--sp-lg); }
-      .utility-grid { grid-template-columns: 1fr; }
-      .footer__cols { grid-template-columns: 1fr; }
-      .sticky-bar { display: none; }
-      .t-hero { font-size: 34px; }
-      .t-display-lg { font-size: 28px; }
-    }
-    @media (max-width: 419px) {
-      .tile--hero .tile__headline { font-size: 28px; }
-    }
-  </style>
+  <title>Overview — Photography</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- ── Global Nav ──────────────────────────────────────────────── -->
   <nav class="global-nav" role="navigation" aria-label="Global">
     <div class="global-nav__inner">
-      <a class="global-nav__logo" href="#" aria-label="Home">
+      <a class="global-nav__logo" href="index.html" aria-label="Home">
         <svg viewBox="0 0 814 1000" role="img" aria-hidden="true">
           <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-42.4-150.3-109.7C74.4 728.1 35.3 604.1 35.3 487c0-191.2 125.3-291.8 248.5-291.8 66.4 0 121.7 43.6 163.5 43.6 40 0 101.9-46 176.8-46 28.6 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z"/>
         </svg>
       </a>
-
       <ul class="global-nav__links" role="list">
         <li><a href="#">Store</a></li>
         <li><a href="#">Mac</a></li>
@@ -755,7 +29,6 @@
         <li><a href="#">Accessories</a></li>
         <li><a href="#">Support</a></li>
       </ul>
-
       <div class="global-nav__actions">
         <a class="global-nav__icon-btn" href="#" aria-label="Search">
           <svg viewBox="0 0 18 18" aria-hidden="true">
@@ -776,13 +49,13 @@
     <div class="sub-nav__inner">
       <span class="sub-nav__category">Photography</span>
       <ul class="sub-nav__links" role="list">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#store">Store</a></li>
-        <li><a href="#environment">Environment</a></li>
-        <li><a href="#configure">Configure</a></li>
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="environment.html">Environment</a></li>
+        <li><a href="configure.html">Configure</a></li>
       </ul>
-      <a class="btn-primary" href="#store" style="font-size:14px;padding:8px 18px;">Shop now</a>
+      <a class="btn-primary" href="store.html" style="font-size:14px;padding:8px 18px;">Shop now</a>
     </div>
   </div>
 
@@ -790,58 +63,43 @@
   <main class="page-body">
 
     <!-- ── Hero Tile ─────────────────────────────────────────────── -->
-    <section id="overview" class="tile tile--hero">
+    <section class="tile tile--hero">
       <div class="tile__inner">
         <p class="tile__eyebrow" style="color:var(--primary)">Introducing</p>
-        <h1 class="tile__headline">
-          The world through<br>your lens.
-        </h1>
+        <h1 class="tile__headline">The world through<br>your lens.</h1>
         <p class="tile__tagline t-lead" style="color:var(--ink-muted-48)">
-          A photography-first interface. Every frame, a gallery.
+          Professional tools. Honest performance.
         </p>
         <div class="btn-ctas">
-          <a class="btn-primary" href="#store">Shop the collection</a>
-          <a class="btn-secondary" href="#overview">Learn more</a>
+          <a class="btn-primary" href="store.html">Shop the collection</a>
+          <a class="btn-secondary" href="gallery.html">See the gallery</a>
         </div>
 
         <!-- Hero camera SVG illustration -->
         <div class="tile__product-img tile__product-img--wide">
           <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" class="product-svg" aria-label="Professional camera" role="img">
-            <!-- Camera body -->
             <rect x="80" y="140" width="740" height="280" rx="22" fill="#1d1d1f"/>
-            <!-- Viewfinder hump -->
             <rect x="320" y="90" width="180" height="60" rx="14" fill="#272729"/>
-            <!-- Grip -->
             <rect x="80" y="140" width="100" height="280" rx="22" fill="#111"/>
-            <!-- Lens barrel -->
             <circle cx="400" cy="285" r="130" fill="#111"/>
             <circle cx="400" cy="285" r="110" fill="#1a1a1c"/>
             <circle cx="400" cy="285" r="88" fill="#0d0d0e"/>
             <circle cx="400" cy="285" r="68" fill="#272729"/>
-            <!-- Lens glass -->
             <circle cx="400" cy="285" r="54" fill="#0a0a0c"/>
             <circle cx="400" cy="285" r="44" fill="#0d1a2a"/>
-            <!-- Lens reflections -->
             <ellipse cx="385" cy="268" rx="18" ry="12" fill="rgba(255,255,255,.06)" transform="rotate(-20,385,268)"/>
             <circle cx="415" cy="300" r="6" fill="rgba(255,255,255,.04)"/>
-            <!-- Lens ring markings -->
             <circle cx="400" cy="285" r="122" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
             <circle cx="400" cy="285" r="100" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-            <!-- Shutter button -->
             <circle cx="660" cy="152" r="18" fill="#333"/>
             <circle cx="660" cy="152" r="12" fill="#444"/>
-            <!-- Mode dial -->
             <circle cx="710" cy="152" r="22" fill="#222"/>
             <circle cx="710" cy="152" r="14" fill="#2a2a2c"/>
             <line x1="710" y1="132" x2="710" y2="140" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
-            <!-- Top controls -->
             <rect x="590" y="140" width="50" height="10" rx="5" fill="#2a2a2c"/>
-            <!-- Flash hot-shoe -->
             <rect x="360" y="85" width="80" height="8" rx="2" fill="#2a2a2c"/>
-            <!-- Display screen -->
             <rect x="560" y="175" width="210" height="130" rx="8" fill="#0a1520"/>
             <rect x="568" y="183" width="194" height="114" rx="5" fill="#0d1e30"/>
-            <!-- Screen content: histogram bars -->
             <rect x="578" y="270" width="8"  height="20" rx="2" fill="rgba(255,255,255,.3)"/>
             <rect x="590" y="258" width="8"  height="32" rx="2" fill="rgba(255,255,255,.4)"/>
             <rect x="602" y="246" width="8"  height="44" rx="2" fill="rgba(255,255,255,.5)"/>
@@ -850,9 +108,7 @@
             <rect x="638" y="262" width="8"  height="28" rx="2" fill="rgba(255,255,255,.35)"/>
             <rect x="650" y="272" width="8"  height="18" rx="2" fill="rgba(255,255,255,.25)"/>
             <rect x="662" y="268" width="8"  height="22" rx="2" fill="rgba(255,255,255,.2)"/>
-            <!-- ISO / shutter readout -->
             <text x="578" y="207" font-family="SF Pro Text,monospace" font-size="9" fill="rgba(255,255,255,.6)">1/500  f/2.8  ISO 400</text>
-            <!-- Strap lugs -->
             <rect x="82"  y="195" width="8" height="24" rx="4" fill="#333"/>
             <rect x="810" y="195" width="8" height="24" rx="4" fill="#333"/>
           </svg>
@@ -860,8 +116,8 @@
       </div>
     </section>
 
-    <!-- ── Dark Tile 1 ───────────────────────────────────────────── -->
-    <section id="gallery" class="tile tile--dark">
+    <!-- ── Dark Tile — 48MP ───────────────────────────────────────── -->
+    <section class="tile tile--dark">
       <div class="tile__inner">
         <p class="tile__eyebrow" style="color:var(--body-muted)">ProShot 48MP</p>
         <h2 class="tile__headline t-display-lg">Every detail. Revealed.</h2>
@@ -869,16 +125,13 @@
           48-megapixel resolution that captures what the eye misses.
         </p>
         <div class="btn-ctas">
-          <a class="btn-primary" href="#store">Buy</a>
-          <a class="btn-secondary-dark" href="#gallery">Learn more</a>
+          <a class="btn-primary" href="store.html">Buy</a>
+          <a class="btn-secondary-dark" href="gallery.html">Learn more</a>
         </div>
-
-        <!-- Lens close-up SVG -->
         <div class="tile__product-img tile__product-img--sm">
           <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" class="product-svg" aria-label="Camera lens" role="img">
             <circle cx="170" cy="170" r="165" fill="#111"/>
             <circle cx="170" cy="170" r="148" fill="#0d0d0e"/>
-            <!-- Aperture blades -->
             <g opacity=".15">
               <ellipse cx="170" cy="85"  rx="18" ry="60" fill="white" transform="rotate(0,170,170)"/>
               <ellipse cx="170" cy="85"  rx="18" ry="60" fill="white" transform="rotate(45,170,170)"/>
@@ -889,25 +142,21 @@
               <ellipse cx="170" cy="85"  rx="18" ry="60" fill="white" transform="rotate(270,170,170)"/>
               <ellipse cx="170" cy="85"  rx="18" ry="60" fill="white" transform="rotate(315,170,170)"/>
             </g>
-            <!-- Glass -->
             <circle cx="170" cy="170" r="90"  fill="#050d18"/>
             <circle cx="170" cy="170" r="72"  fill="#071525"/>
-            <!-- Reflections -->
             <ellipse cx="148" cy="145" rx="24" ry="16" fill="rgba(41,151,255,.12)" transform="rotate(-15,148,145)"/>
             <circle  cx="195" cy="195" r="8"  fill="rgba(255,255,255,.04)"/>
             <circle  cx="170" cy="170" r="28" fill="#0a1e35" opacity=".8"/>
-            <!-- Ring engravings -->
             <circle cx="170" cy="170" r="128" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1.5"/>
             <circle cx="170" cy="170" r="110" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
             <circle cx="170" cy="170" r="100" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="0.5"/>
-            <!-- Spec text -->
             <text x="170" y="38" text-anchor="middle" font-family="SF Pro Text,monospace" font-size="9" fill="rgba(255,255,255,.35)" letter-spacing="2">PROSHOT · 24-70mm · f/2.8</text>
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- ── Light Tile ─────────────────────────────────────────────── -->
+    <!-- ── Light Tile — ProRes ────────────────────────────────────── -->
     <section class="tile tile--light">
       <div class="tile__inner">
         <p class="tile__eyebrow" style="color:var(--primary)">ProRes Video</p>
@@ -916,28 +165,22 @@
           4K ProRes at 120fps. Log-encoded, grade-ready, right from the field.
         </p>
         <div class="btn-ctas">
-          <a class="btn-primary" href="#store">Buy</a>
-          <a class="btn-secondary" href="#gallery">Learn more</a>
+          <a class="btn-primary" href="store.html">Buy</a>
+          <a class="btn-secondary" href="gallery.html">Learn more</a>
         </div>
-
-        <!-- Camera side view SVG -->
         <div class="tile__product-img">
           <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" class="product-svg" aria-label="Camera side view" role="img">
-            <!-- Body -->
             <rect x="60" y="80" width="480" height="220" rx="18" fill="#1d1d1f"/>
             <rect x="60" y="80" width="90" height="220" rx="18" fill="#111"/>
-            <!-- Lens -->
             <circle cx="290" cy="190" r="100" fill="#111"/>
             <circle cx="290" cy="190" r="84"  fill="#151515"/>
             <circle cx="290" cy="190" r="68"  fill="#0d0d0e"/>
             <circle cx="290" cy="190" r="50"  fill="#071525"/>
             <ellipse cx="272" cy="174" rx="14" ry="9" fill="rgba(255,255,255,.07)" transform="rotate(-20,272,174)"/>
             <circle cx="290" cy="190" r="92"  fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
-            <!-- LCD -->
             <rect x="390" y="120" width="120" height="90" rx="7" fill="#0a1520"/>
             <text x="450" y="158" text-anchor="middle" font-family="SF Pro Text,monospace" font-size="8" fill="rgba(255,255,255,.5)">4K ProRes</text>
             <text x="450" y="172" text-anchor="middle" font-family="SF Pro Text,monospace" font-size="8" fill="rgba(255,255,255,.4)">120fps · Log</text>
-            <!-- Controls row -->
             <circle cx="450" cy="100" r="14" fill="#222"/>
             <circle cx="490" cy="100" r="10" fill="#222"/>
             <rect x="400" y="93"  width="36" height="14" rx="7" fill="#222"/>
@@ -946,350 +189,32 @@
       </div>
     </section>
 
-    <!-- ── Two-Up: Parchment + Dark ──────────────────────────────── -->
-    <div class="two-up">
-      <section class="tile tile--parchment">
-        <div class="tile__inner">
-          <p class="tile__eyebrow" style="color:var(--primary)">Wireless Flash</p>
-          <h2 class="tile__headline t-display-md">Strobe.<br>Synchronized.</h2>
-          <p class="t-caption" style="color:var(--ink-muted-48);margin-top:var(--sp-sm)">
-            Multi-flash TTL at 1/8000s sync speed over a 300-foot wireless range.
-          </p>
-          <div class="btn-ctas" style="justify-content:flex-start">
-            <a class="btn-primary" href="#store">Buy</a>
-            <a class="text-link" href="#gallery" style="margin-left:var(--sp-sm)">Learn more →</a>
-          </div>
-          <!-- Flash head SVG -->
-          <div style="margin-top:var(--sp-xl)">
-            <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" class="product-svg" aria-label="Flash unit" role="img" style="filter:drop-shadow(var(--product-shadow))">
-              <rect x="40" y="60" width="200" height="100" rx="12" fill="#1d1d1f"/>
-              <rect x="48" y="68" width="130" height="84" rx="6"  fill="#111"/>
-              <!-- Flash tube -->
-              <rect x="56" y="82" width="114" height="56" rx="4" fill="#e8e8ec"/>
-              <rect x="60" y="88" width="106" height="44" rx="3" fill="#f0f0f5"/>
-              <!-- Fresnel lines -->
-              <line x1="80"  y1="88" x2="80"  y2="132" stroke="rgba(0,0,0,.08)" stroke-width="1"/>
-              <line x1="96"  y1="88" x2="96"  y2="132" stroke="rgba(0,0,0,.08)" stroke-width="1"/>
-              <line x1="112" y1="88" x2="112" y2="132" stroke="rgba(0,0,0,.08)" stroke-width="1"/>
-              <line x1="128" y1="88" x2="128" y2="132" stroke="rgba(0,0,0,.08)" stroke-width="1"/>
-              <line x1="144" y1="88" x2="144" y2="132" stroke="rgba(0,0,0,.08)" stroke-width="1"/>
-              <!-- Hot shoe foot -->
-              <rect x="110" y="156" width="60" height="12" rx="3" fill="#333"/>
-              <rect x="120" y="152" width="40" height="8"  rx="2" fill="#2a2a2c"/>
-              <!-- Pilot light -->
-              <circle cx="208" cy="96" r="7" fill="#ff3b30"/>
-              <circle cx="208" cy="96" r="4" fill="#ff6961" opacity=".8"/>
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      <section class="tile tile--dark-2">
-        <div class="tile__inner">
-          <p class="tile__eyebrow" style="color:var(--body-muted)">ProTripod Carbon</p>
-          <h2 class="tile__headline t-display-md" style="color:var(--on-dark)">Stability.<br>Redefined.</h2>
-          <p class="t-caption" style="color:var(--body-muted);margin-top:var(--sp-sm)">
-            Carbon-fiber legs, arca-swiss head. From 22cm to 195cm in eight seconds.
-          </p>
-          <div class="btn-ctas" style="justify-content:flex-start">
-            <a class="btn-primary" href="#store">Buy</a>
-            <a class="text-link text-link--dark" href="#gallery" style="margin-left:var(--sp-sm)">Learn more →</a>
-          </div>
-          <!-- Tripod SVG -->
-          <div style="margin-top:var(--sp-xl)">
-            <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" class="product-svg" aria-label="Tripod" role="img" style="filter:drop-shadow(var(--product-shadow))">
-              <!-- Head -->
-              <rect x="72" y="30" width="56" height="28" rx="8" fill="#333"/>
-              <rect x="82" y="22" width="36" height="14" rx="5" fill="#2a2a2c"/>
-              <!-- Column -->
-              <rect x="96" y="56" width="8" height="80" rx="3" fill="#444"/>
-              <!-- Legs -->
-              <line x1="100" y1="136" x2="30"  y2="210" stroke="#3a3a3c" stroke-width="5" stroke-linecap="round"/>
-              <line x1="100" y1="136" x2="100" y2="215" stroke="#3a3a3c" stroke-width="5" stroke-linecap="round"/>
-              <line x1="100" y1="136" x2="170" y2="210" stroke="#3a3a3c" stroke-width="5" stroke-linecap="round"/>
-              <!-- Feet -->
-              <circle cx="30"  cy="212" r="5" fill="#555"/>
-              <circle cx="100" cy="217" r="5" fill="#555"/>
-              <circle cx="170" cy="212" r="5" fill="#555"/>
-              <!-- Leg spreader -->
-              <line x1="54" y1="175" x2="146" y2="175" stroke="#2a2a2c" stroke-width="3"/>
-              <line x1="54" y1="175" x2="100" y2="175" stroke="#2a2a2c" stroke-width="3"/>
-              <!-- Collar -->
-              <rect x="88" y="126" width="24" height="14" rx="4" fill="#555"/>
-            </svg>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ── Dark Tile 3 — Widescreen ──────────────────────────────── -->
-    <section class="tile tile--dark-3">
-      <div class="tile__inner" style="max-width:1100px">
-        <p class="tile__eyebrow" style="color:var(--body-muted)">ProPrime 85mm</p>
-        <h2 class="tile__headline t-hero" style="color:var(--on-dark)">Portrait perfected.</h2>
-        <p class="tile__tagline t-lead" style="color:var(--body-muted)">
-          f/1.2 maximum aperture. Bokeh so smooth it feels painted.
-        </p>
-        <div class="btn-ctas">
-          <a class="btn-primary" href="#store">Buy</a>
-          <a class="btn-secondary-dark" href="#gallery">Learn more</a>
-        </div>
-
-        <!-- 85mm Prime lens SVG -->
-        <div class="tile__product-img">
-          <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" class="product-svg" aria-label="85mm prime lens" role="img">
-            <!-- Barrel -->
-            <rect x="80" y="60" width="340" height="160" rx="16" fill="#1a1a1c"/>
-            <!-- Barrel rings -->
-            <rect x="80"  y="60"  width="24" height="160" rx="6" fill="#111"/>
-            <rect x="396" y="60"  width="24" height="160" rx="6" fill="#111"/>
-            <rect x="190" y="60"  width="12" height="160" fill="#222"/>
-            <rect x="298" y="60"  width="12" height="160" fill="#222"/>
-            <!-- Focus ring ribbing -->
-            <g opacity=".4">
-              <rect x="215" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="223" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="231" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="239" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="247" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="255" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="263" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="271" y="68" width="3" height="144" rx="1" fill="white"/>
-              <rect x="279" y="68" width="3" height="144" rx="1" fill="white"/>
-            </g>
-            <!-- Front glass -->
-            <circle cx="116" cy="140" r="44" fill="#071525"/>
-            <ellipse cx="104" cy="128" rx="12" ry="8" fill="rgba(41,151,255,.1)" transform="rotate(-15,104,128)"/>
-            <circle cx="116" cy="140" r="50" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1.5"/>
-            <!-- Rear glass -->
-            <circle cx="384" cy="140" r="38" fill="#0a0a0c"/>
-            <circle cx="384" cy="140" r="44" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
-            <!-- Engraving -->
-            <text x="250" y="46" text-anchor="middle" font-family="SF Pro Text,monospace" font-size="10" fill="rgba(255,255,255,.3)" letter-spacing="2">85mm  f/1.2  Ø77</text>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Environment / Quote Card ──────────────────────────────── -->
-    <section id="environment" class="env-card">
-      <!-- Atmospheric gradient as a stand-in for photography -->
-      <svg class="env-card__bg" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"   stop-color="#0d1b2a"/>
-            <stop offset="40%"  stop-color="#1a3a5c"/>
-            <stop offset="70%"  stop-color="#c26a2a" stop-opacity=".6"/>
-            <stop offset="100%" stop-color="#1a0a02" stop-opacity=".9"/>
-          </linearGradient>
-          <radialGradient id="sun" cx="60%" cy="45%" r="30%">
-            <stop offset="0%"  stop-color="#f4a25c" stop-opacity=".9"/>
-            <stop offset="60%" stop-color="#c26a2a" stop-opacity=".3"/>
-            <stop offset="100%" stop-color="transparent"/>
-          </radialGradient>
-        </defs>
-        <rect width="1440" height="600" fill="url(#sky)"/>
-        <rect width="1440" height="600" fill="url(#sun)"/>
-        <!-- Mountain silhouettes -->
-        <polygon points="0,600 200,320 380,420 520,260 700,380 860,200 1000,310 1200,180 1440,300 1440,600" fill="#0a0d10"/>
-        <!-- Stars -->
-        <circle cx="100" cy="60"  r="1.2" fill="white" opacity=".6"/>
-        <circle cx="220" cy="40"  r="0.8" fill="white" opacity=".5"/>
-        <circle cx="340" cy="80"  r="1.0" fill="white" opacity=".4"/>
-        <circle cx="460" cy="30"  r="1.4" fill="white" opacity=".7"/>
-        <circle cx="580" cy="55"  r="0.9" fill="white" opacity=".3"/>
-        <circle cx="700" cy="25"  r="1.1" fill="white" opacity=".6"/>
-        <circle cx="820" cy="70"  r="0.7" fill="white" opacity=".5"/>
-        <circle cx="940" cy="35"  r="1.3" fill="white" opacity=".4"/>
-        <circle cx="1060" cy="55" r="1.0" fill="white" opacity=".6"/>
-        <circle cx="1180" cy="20" r="0.8" fill="white" opacity=".5"/>
-        <circle cx="1300" cy="45" r="1.2" fill="white" opacity=".4"/>
-        <circle cx="1400" cy="65" r="0.9" fill="white" opacity=".7"/>
-      </svg>
-
-      <div class="env-card__content">
-        <div class="env-card__badge">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM3.5 8a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0z" fill="rgba(255,255,255,.6)"/></svg>
-          Gallery 2030
-        </div>
-        <h2 class="t-display-lg" style="color:var(--on-dark);margin-bottom:var(--sp-lg)">
-          Shot on earth.<br>Felt beyond it.
-        </h2>
-        <p class="t-lead-airy" style="color:var(--body-muted);margin-bottom:var(--sp-xl)">
-          Every landscape is a commitment. Every exposure is a choice. Photography that begins at dawn and refuses to stop.
-        </p>
-        <a class="btn-primary" href="#gallery">Explore the gallery</a>
-      </div>
-    </section>
-
-    <!-- ── Store Grid ─────────────────────────────────────────────── -->
-    <section id="store" class="store-section">
-      <div class="store-section__inner">
-        <div class="store-section__head">
-          <h2>The Photography Store</h2>
-          <p class="t-lead-airy" style="color:var(--ink-muted-48)">Everything you need. Nothing you don't.</p>
-        </div>
-
-        <!-- Search -->
-        <div class="search-wrap" role="search">
-          <svg class="search-icon" viewBox="0 0 18 18" aria-hidden="true">
-            <path d="M7.5 15a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zm0-1.5a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm4.72.22 1.06-1.06 4 4-1.06 1.06-4-4z"/>
-          </svg>
-          <input class="search-input" type="search" placeholder="Search cameras, lenses, accessories" aria-label="Search products"/>
-        </div>
-
-        <div class="utility-grid">
-          <!-- Card 1 -->
-          <article class="utility-card">
-            <div class="utility-card__img-wrap">
-              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Mirrorless camera" role="img">
-                <rect x="15" y="35" width="90" height="60" rx="8" fill="#1d1d1f"/>
-                <rect x="15" y="35" width="22" height="60" rx="8" fill="#111"/>
-                <circle cx="70" cy="65" r="26" fill="#111"/>
-                <circle cx="70" cy="65" r="20" fill="#0d0d0e"/>
-                <circle cx="70" cy="65" r="14" fill="#071525"/>
-                <circle cx="64" cy="59" r="5"  fill="rgba(255,255,255,.07)"/>
-                <circle cx="88" cy="38" r="5" fill="#222"/>
-              </svg>
-            </div>
-            <p class="utility-card__name">ProShot X1</p>
-            <p class="utility-card__desc">48MP full-frame mirrorless with in-body stabilization and real-time subject tracking.</p>
-            <p class="utility-card__price">From $2,999</p>
-            <a class="text-link" href="#store">Buy →</a>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="utility-card">
-            <div class="utility-card__img-wrap">
-              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Camera lens" role="img">
-                <rect x="38" y="20" width="44" height="90" rx="10" fill="#1a1a1c"/>
-                <circle cx="60" cy="110" r="18" fill="#111"/>
-                <circle cx="60" cy="20" r="18" fill="#111"/>
-                <circle cx="60" cy="110" r="12" fill="#0d0d0e"/>
-                <circle cx="60" cy="20"  r="12" fill="#0a1520"/>
-                <ellipse cx="55" cy="14" rx="5" ry="3" fill="rgba(255,255,255,.1)"/>
-                <rect x="36" y="60" width="48" height="10" rx="2" fill="#111"/>
-              </svg>
-            </div>
-            <p class="utility-card__name">ProPrime 85mm f/1.2</p>
-            <p class="utility-card__desc">Ultra-fast portrait prime. Rendering so smooth, post-processing becomes optional.</p>
-            <p class="utility-card__price">From $1,499</p>
-            <a class="text-link" href="#store">Buy →</a>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="utility-card">
-            <div class="utility-card__img-wrap">
-              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Wireless flash" role="img">
-                <rect x="20" y="40" width="80" height="50" rx="8" fill="#1d1d1f"/>
-                <rect x="28" y="48" width="50" height="34" rx="4" fill="#e8e8ec"/>
-                <rect x="38" y="75" width="44" height="8"  rx="3" fill="#333"/>
-                <circle cx="88" cy="54" r="6" fill="#ff3b30"/>
-              </svg>
-            </div>
-            <p class="utility-card__name">ProFlash 600</p>
-            <p class="utility-card__desc">600Ws guide number. Multi-flash TTL wireless sync over 300ft — recharged in 1.2 seconds.</p>
-            <p class="utility-card__price">From $649</p>
-            <a class="text-link" href="#store">Buy →</a>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="utility-card">
-            <div class="utility-card__img-wrap">
-              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Carbon fiber tripod" role="img">
-                <rect x="50" y="15" width="20" height="14" rx="4" fill="#333"/>
-                <rect x="56" y="28" width="8" height="38" rx="2" fill="#444"/>
-                <line x1="60" y1="66" x2="22" y2="106" stroke="#3a3a3c" stroke-width="3.5" stroke-linecap="round"/>
-                <line x1="60" y1="66" x2="60"  y2="110" stroke="#3a3a3c" stroke-width="3.5" stroke-linecap="round"/>
-                <line x1="60" y1="66" x2="98" y2="106" stroke="#3a3a3c" stroke-width="3.5" stroke-linecap="round"/>
-                <circle cx="22"  cy="108" r="3" fill="#555"/>
-                <circle cx="60"  cy="112" r="3" fill="#555"/>
-                <circle cx="98"  cy="108" r="3" fill="#555"/>
-                <line x1="36" y1="90" x2="84" y2="90" stroke="#2a2a2c" stroke-width="2"/>
-              </svg>
-            </div>
-            <p class="utility-card__name">ProTripod Carbon</p>
-            <p class="utility-card__desc">10-layer carbon-fiber legs. Arca-Swiss ball head rated to 22kg. 22–195cm in eight seconds.</p>
-            <p class="utility-card__price">From $449</p>
-            <a class="text-link" href="#store">Buy →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Configurator ────────────────────────────────────────────── -->
-    <section id="configure" class="config-section">
-      <div class="config-section__inner">
-        <div class="config-section__head">
-          <p style="color:var(--primary);font-size:17px;margin-bottom:var(--sp-xs)">Configure</p>
-          <h2 class="t-display-lg" style="margin-bottom:var(--sp-sm)">Build your kit.</h2>
-          <p class="t-lead" style="color:var(--ink-muted-48)">Choose the ProShot X1 that's right for you.</p>
-        </div>
-
-        <p class="config-label">Body</p>
-        <div class="chip-grid">
-          <div class="chip chip--selected" role="button" tabindex="0" aria-pressed="true">
-            <span class="chip__label">ProShot X1</span>
-            <span class="chip__price">From $2,999</span>
-          </div>
-          <div class="chip" role="button" tabindex="0" aria-pressed="false">
-            <span class="chip__label">ProShot X1 Pro</span>
-            <span class="chip__price">From $3,999</span>
-          </div>
-          <div class="chip" role="button" tabindex="0" aria-pressed="false">
-            <span class="chip__label">ProShot X1 Max</span>
-            <span class="chip__price">From $4,999</span>
-          </div>
-        </div>
-
-        <p class="config-label">Memory</p>
-        <div class="chip-grid">
-          <div class="chip" role="button" tabindex="0" aria-pressed="false">
-            <span class="chip__label">256GB</span>
-          </div>
-          <div class="chip chip--selected" role="button" tabindex="0" aria-pressed="true">
-            <span class="chip__label">512GB</span>
-            <span class="chip__price">+$100</span>
-          </div>
-          <div class="chip" role="button" tabindex="0" aria-pressed="false">
-            <span class="chip__label">1TB</span>
-            <span class="chip__price">+$300</span>
-          </div>
-          <div class="chip" role="button" tabindex="0" aria-pressed="false">
-            <span class="chip__label">2TB</span>
-            <span class="chip__price">+$600</span>
-          </div>
-        </div>
-
-        <p class="config-label">Color</p>
-        <div class="chip-grid">
-          <div class="chip chip--selected" role="button" tabindex="0" aria-pressed="true">
-            <span class="chip__label">Midnight</span>
-          </div>
-          <div class="chip" role="button" tabindex="0" aria-pressed="false">
-            <span class="chip__label">Space Gray</span>
-          </div>
-          <div class="chip" role="button" tabindex="0" aria-pressed="false">
-            <span class="chip__label">Silver</span>
-          </div>
-        </div>
-
-        <div style="text-align:center;margin-top:var(--sp-xxl)">
-          <a class="btn-store-hero" href="#store">Add to Bag — $3,099</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Parchment closing tile ──────────────────────────────────── -->
+    <!-- ── Closing CTA Grid ───────────────────────────────────────── -->
     <section class="tile tile--parchment" style="padding-bottom:calc(var(--sp-sec) + 40px)">
       <div class="tile__inner">
-        <h2 class="t-display-lg" style="margin-bottom:var(--sp-sm)">Made for those who see differently.</h2>
-        <p class="t-lead" style="color:var(--ink-muted-48);margin-bottom:var(--sp-xl)">
-          Tools that vanish when you need them to. Results that endure.
+        <h2 class="t-display-lg" style="margin-bottom:var(--sp-sm)">Built for the field.</h2>
+        <p style="color:var(--ink-muted-48);margin-bottom:var(--sp-xl);font-size:17px;">
+          Explore the system — from gallery to gear to configuration.
         </p>
-        <div class="btn-ctas">
-          <a class="btn-primary" href="#store">Shop Photography</a>
-          <a class="btn-secondary" href="#overview">Explore the system</a>
+        <div class="cta-grid">
+          <a class="cta-card" href="gallery.html">
+            <span class="cta-card__icon">📷</span>
+            <span class="cta-card__title">Gallery</span>
+            <span class="cta-card__desc">Flash sync, tripod stability, and the 85mm prime — see the full hardware lineup.</span>
+            <span class="cta-card__link">Explore gallery →</span>
+          </a>
+          <a class="cta-card" href="store.html">
+            <span class="cta-card__icon">🛍</span>
+            <span class="cta-card__title">Store</span>
+            <span class="cta-card__desc">Cameras, lenses, flash, and tripods — browse the full product range with pricing.</span>
+            <span class="cta-card__link">Shop now →</span>
+          </a>
+          <a class="cta-card" href="environment.html">
+            <span class="cta-card__icon">🏔</span>
+            <span class="cta-card__title">Environment</span>
+            <span class="cta-card__desc">Real-world performance in demanding light — from pre-dawn to last light.</span>
+            <span class="cta-card__link">See conditions →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1362,45 +287,7 @@
     </div>
   </footer>
 
-  <!-- ── Floating Sticky Bar ────────────────────────────────────── -->
-  <div class="sticky-bar" id="stickyBar" aria-live="polite">
-    <div class="sticky-bar__label">
-      ProShot X1 · 512GB · Midnight
-      <span class="sticky-bar__price">&nbsp;$3,099</span>
-    </div>
-    <a class="btn-primary" href="#store">Add to Bag</a>
-  </div>
-
   <script>
-    /* Configurator chip selection */
-    document.querySelectorAll(".chip-grid").forEach(grid => {
-      grid.querySelectorAll(".chip").forEach(chip => {
-        chip.addEventListener("click", () => {
-          grid.querySelectorAll(".chip").forEach(c => {
-            c.classList.remove("chip--selected");
-            c.setAttribute("aria-pressed", "false");
-          });
-          chip.classList.add("chip--selected");
-          chip.setAttribute("aria-pressed", "true");
-        });
-        chip.addEventListener("keydown", e => {
-          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chip.click(); }
-        });
-      });
-    });
-
-    /* Floating sticky bar — show after configure section enters view */
-    const stickyBar = document.getElementById("stickyBar");
-    const configSection = document.getElementById("configure");
-    if (configSection && stickyBar) {
-      const obs = new IntersectionObserver(
-        ([entry]) => stickyBar.classList.toggle("sticky-bar--visible", entry.isIntersecting),
-        { threshold: 0.1 }
-      );
-      obs.observe(configSection);
-    }
-
-    /* Active-scale micro-interaction for touch devices */
     document.querySelectorAll(".btn-primary, .btn-secondary, .btn-secondary-dark, .btn-store-hero").forEach(btn => {
       btn.addEventListener("touchstart", () => btn.style.transform = "scale(.95)", { passive: true });
       btn.addEventListener("touchend",   () => btn.style.transform = "", { passive: true });

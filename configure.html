@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- ── Global Nav ──────────────────────────────────────────────── -->
   <nav class="global-nav" role="navigation" aria-label="Global">
     <div class="global-nav__inner">
       <a class="global-nav__logo" href="index.html" aria-label="Home">
@@ -16,7 +17,7 @@
         </svg>
       </a>
       <ul class="global-nav__links" role="list">
-        <li><a href="store.html">Store</a></li>
+        <li><a href="#">Store</a></li>
         <li><a href="#">Mac</a></li>
         <li><a href="#">iPad</a></li>
         <li><a href="#">iPhone</a></li>
@@ -30,15 +31,20 @@
       </ul>
       <div class="global-nav__actions">
         <a class="global-nav__icon-btn" href="#" aria-label="Search">
-          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M7.5 15a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zm0-1.5a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm4.72.22 1.06-1.06 4 4-1.06 1.06-4-4z"/></svg>
+          <svg viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M7.5 15a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zm0-1.5a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm4.72.22 1.06-1.06 4 4-1.06 1.06-4-4z"/>
+          </svg>
         </a>
         <a class="global-nav__icon-btn" href="#" aria-label="Shopping Bag">
-          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M6 5V4a3 3 0 1 1 6 0v1h2.5A1.5 1.5 0 0 1 16 6.5v9A1.5 1.5 0 0 1 14.5 17h-11A1.5 1.5 0 0 1 2 15.5v-9A1.5 1.5 0 0 1 3.5 5H6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0v1zM3.5 6.5v9h11v-9h-11z"/></svg>
+          <svg viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M6 5V4a3 3 0 1 1 6 0v1h2.5A1.5 1.5 0 0 1 16 6.5v9A1.5 1.5 0 0 1 14.5 17h-11A1.5 1.5 0 0 1 2 15.5v-9A1.5 1.5 0 0 1 3.5 5H6zm1.5 0h3V4a1.5 1.5 0 0 0-3 0v1zM3.5 6.5v9h11v-9h-11z"/>
+          </svg>
         </a>
       </div>
     </div>
   </nav>
 
+  <!-- ── Sub Nav ───────────────────────────────────────────────────── -->
   <div class="sub-nav" role="navigation" aria-label="Photography">
     <div class="sub-nav__inner">
       <span class="sub-nav__category">Photography</span>
@@ -53,18 +59,20 @@
     </div>
   </div>
 
+  <!-- ── Page Body ─────────────────────────────────────────────────── -->
   <main class="page-body">
 
-    <section class="config-section" id="configurator">
+    <!-- ── Configurator ────────────────────────────────────────────── -->
+    <section id="configure" class="config-section">
       <div class="config-section__inner">
         <div class="config-section__head">
           <p style="color:var(--primary);font-size:17px;margin-bottom:var(--sp-xs)">Configure</p>
-          <h1 class="t-display-lg" style="margin-bottom:var(--sp-sm)">Build your kit.</h1>
+          <h2 class="t-display-lg" style="margin-bottom:var(--sp-sm)">Build your kit.</h2>
           <p class="t-lead" style="color:var(--ink-muted-48)">Choose the ProShot X1 that's right for you.</p>
         </div>
 
         <p class="config-label">Body</p>
-        <div class="chip-grid" data-group="body">
+        <div class="chip-grid">
           <div class="chip chip--selected" role="button" tabindex="0" aria-pressed="true">
             <span class="chip__label">ProShot X1</span>
             <span class="chip__price">From $2,999</span>
@@ -80,7 +88,7 @@
         </div>
 
         <p class="config-label">Memory</p>
-        <div class="chip-grid" data-group="memory">
+        <div class="chip-grid">
           <div class="chip" role="button" tabindex="0" aria-pressed="false">
             <span class="chip__label">256GB</span>
           </div>
@@ -99,7 +107,7 @@
         </div>
 
         <p class="config-label">Color</p>
-        <div class="chip-grid" data-group="color">
+        <div class="chip-grid">
           <div class="chip chip--selected" role="button" tabindex="0" aria-pressed="true">
             <span class="chip__label">Midnight</span>
           </div>
@@ -111,36 +119,25 @@
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:var(--sp-xxl);padding-bottom:var(--sp-xxl)">
-          <p style="color:var(--ink-muted-48);font-size:14px;margin-bottom:var(--sp-lg)" id="summaryLine">
-            ProShot X1 · 512GB · Midnight
-          </p>
-          <a class="btn-store-hero" href="#" id="addToBagBtn">Add to Bag — $3,099</a>
+        <div style="text-align:center;margin-top:var(--sp-xxl)">
+          <a class="btn-store-hero" href="store.html">Add to Bag — $3,099</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Floating sticky bar -->
-  <div class="sticky-bar" id="stickyBar" aria-live="polite">
-    <div class="sticky-bar__label">
-      <span id="stickyLabel">ProShot X1 · 512GB · Midnight</span>
-      <span class="sticky-bar__price" id="stickyPrice">&nbsp;$3,099</span>
-    </div>
-    <a class="btn-primary" href="#">Add to Bag</a>
-  </div>
-
+  <!-- ── Footer ──────────────────────────────────────────────────── -->
   <footer>
     <div class="footer__inner">
       <div class="footer__cols">
         <div class="footer__col">
           <h3>Shop</h3>
           <ul>
-            <li><a href="store.html">Cameras</a></li>
-            <li><a href="store.html">Lenses</a></li>
-            <li><a href="store.html">Lighting</a></li>
-            <li><a href="store.html">Accessories</a></li>
+            <li><a href="#">Cameras</a></li>
+            <li><a href="#">Lenses</a></li>
+            <li><a href="#">Lighting</a></li>
+            <li><a href="#">Accessories</a></li>
             <li><a href="#">Gift Cards</a></li>
           </ul>
         </div>
@@ -166,7 +163,7 @@
           <h3>About</h3>
           <ul>
             <li><a href="#">Our Story</a></li>
-            <li><a href="environment.html">Environment</a></li>
+            <li><a href="#">Environment</a></li>
             <li><a href="#">Newsroom</a></li>
             <li><a href="#">Investors</a></li>
           </ul>
@@ -196,55 +193,49 @@
     </div>
   </footer>
 
+  <!-- ── Floating Sticky Bar ────────────────────────────────────── -->
+  <div class="sticky-bar" id="stickyBar" aria-live="polite">
+    <div class="sticky-bar__label">
+      ProShot X1 · 512GB · Midnight
+      <span class="sticky-bar__price">&nbsp;$3,099</span>
+    </div>
+    <a class="btn-primary" href="store.html">Add to Bag</a>
+  </div>
+
   <script>
-    const prices = {
-      body:   { 'ProShot X1': 2999, 'ProShot X1 Pro': 3999, 'ProShot X1 Max': 4999 },
-      memory: { '256GB': 0, '512GB': 100, '1TB': 300, '2TB': 600 },
-      color:  { 'Midnight': 0, 'Space Gray': 0, 'Silver': 0 }
-    };
-    const selected = { body: 'ProShot X1', memory: '512GB', color: 'Midnight' };
-
-    function updateSummary() {
-      const total = prices.body[selected.body] + prices.memory[selected.memory];
-      const label = `${selected.body} · ${selected.memory} · ${selected.color}`;
-      document.getElementById('summaryLine').textContent = label;
-      document.getElementById('addToBagBtn').textContent = `Add to Bag — $${total.toLocaleString()}`;
-      document.getElementById('stickyLabel').textContent = label;
-      document.getElementById('stickyPrice').textContent = ` $${total.toLocaleString()}`;
-    }
-
-    document.querySelectorAll('.chip-grid').forEach(grid => {
-      const group = grid.dataset.group;
-      grid.querySelectorAll('.chip').forEach(chip => {
-        chip.addEventListener('click', () => {
-          grid.querySelectorAll('.chip').forEach(c => {
-            c.classList.remove('chip--selected');
-            c.setAttribute('aria-pressed', 'false');
+    /* Configurator chip selection */
+    document.querySelectorAll(".chip-grid").forEach(grid => {
+      grid.querySelectorAll(".chip").forEach(chip => {
+        chip.addEventListener("click", () => {
+          grid.querySelectorAll(".chip").forEach(c => {
+            c.classList.remove("chip--selected");
+            c.setAttribute("aria-pressed", "false");
           });
-          chip.classList.add('chip--selected');
-          chip.setAttribute('aria-pressed', 'true');
-          selected[group] = chip.querySelector('.chip__label').textContent;
-          updateSummary();
+          chip.classList.add("chip--selected");
+          chip.setAttribute("aria-pressed", "true");
         });
-        chip.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chip.click(); }
+        chip.addEventListener("keydown", e => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chip.click(); }
         });
       });
     });
 
-    const stickyBar = document.getElementById('stickyBar');
-    const configurator = document.getElementById('configurator');
-    const obs = new IntersectionObserver(
-      ([entry]) => stickyBar.classList.toggle('sticky-bar--visible', entry.isIntersecting),
-      { threshold: 0.05 }
-    );
-    obs.observe(configurator);
+    /* Floating sticky bar — show after configure section enters view */
+    const stickyBar = document.getElementById("stickyBar");
+    const configSection = document.getElementById("configure");
+    if (configSection && stickyBar) {
+      const obs = new IntersectionObserver(
+        ([entry]) => stickyBar.classList.toggle("sticky-bar--visible", entry.isIntersecting),
+        { threshold: 0.1 }
+      );
+      obs.observe(configSection);
+    }
 
-    document.querySelectorAll('.btn-store-hero, .btn-primary').forEach(btn => {
-      btn.addEventListener('touchstart', () => btn.style.transform = 'scale(.95)', { passive: true });
-      btn.addEventListener('touchend',   () => btn.style.transform = '', { passive: true });
+    /* Active-scale micro-interaction for touch devices */
+    document.querySelectorAll(".btn-primary, .btn-secondary, .btn-store-hero").forEach(btn => {
+      btn.addEventListener("touchstart", () => btn.style.transform = "scale(.95)", { passive: true });
+      btn.addEventListener("touchend",   () => btn.style.transform = "", { passive: true });
     });
   </script>
-
 </body>
 </html>
