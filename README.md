@@ -30,19 +30,19 @@ Results-driven Software Engineer specializing in **AI systems architecture**, **
 <td width="50%">
 
 ### Systems & Agents
-- **Multi-Agent Orchestration** — Google ADK, persistent memory state, function calling to external APIs
-- **LLM Routing Architecture** — Confidence-gated on-device vs. cloud model selection
-- **RAG Pipelines** — Vector embeddings, knowledge bases, retrieval-augmented generation
-- **Enterprise AI** — Role-based access, data anonymization gateways, multi-model routing
+- **3-Layer LLM Router** — TF-IDF ML gate + GPT-4o fallback; 92.6% accuracy, 85% queries at zero API cost
+- **Multi-Agent Research Loop** — Orchestrator + Research + Reasoning agents, dual ChromaDB/sliding-window memory
+- **RAG Pipelines** — Vector embeddings, ArXiv APIs, semantic retrieval with automatic token compression
+- **On-Device Agent Frameworks** — CoreML (Swift) and Kotlin Multiplatform with swappable model backends
 
 </td>
 <td width="50%">
 
 ### Full-Stack Products
-- **React / Angular / Node.js** — LMS platforms, asset management dashboards, AI workspaces
-- **Django REST + MediaPipe** — Real-time vision pipelines serving at 30 FPS
-- **Swift + CoreML** — On-device inference iOS apps with zero-network privacy architecture
-- **Azure + Docker + Kubernetes** — Containerized microservices, cloud AI workflow automation
+- **React / Angular / Node.js** — Hospital management, LMS, AI research canvas, asset dashboards
+- **Vision Pipelines** — LaneNet at 150 FPS; MediaPipe pose at 30 FPS; CLIP zero-shot grounding
+- **Swift + CoreML** — On-device iOS agents with zero-cloud inference (Apple Swift Student Challenge 2026)
+- **Azure + Docker + Kubernetes** — LLaMA-based Azure AI service; containerized microservice backends
 
 </td>
 </tr>
@@ -107,70 +107,103 @@ Results-driven Software Engineer specializing in **AI systems architecture**, **
 <tr>
 <td width="50%">
 
-### Dual LLM Personalization System
-Privacy-first on-device routing that dynamically selects between **Gemini 2.5 Flash** (fast inference) and **Gemini 2.0 Pro** (complex reasoning) based on query complexity. SQLite-backed user profile store for persistent cross-session memory.
+### [Real-Time Pose Estimation](https://github.com/sandeepvijayarao09/realtime-pose-estimation) ⭐
+**IEEE AISP 2024** — MediaPipe Holistic detects 33 full-body landmarks with 3D joint angles and velocities. LSTM network classifies 11 exercise/yoga activities from temporal joint sequences. Three configurable performance modes; COCO OKS metrics for validation.
 
-`Python` `Gemini API` `SQLite` `LLM Routing`
+`Python` `MediaPipe` `TensorFlow/Keras` `OpenCV` `NumPy`
 
-**On-device privacy · Confidence-gated switching**
-
-</td>
-<td width="50%">
-
-### Agentic Research Assistant
-Multi-agent orchestration system built on **Google ADK**. Specialized sub-agents with persistent memory state management and function calling to external web APIs and knowledge bases.
-
-`Python` `Google ADK` `Function Calling` `RAG`
-
-**Plan → Reason → Act · Persistent memory**
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### SkillGap AI — Full-Stack LMS
-End-to-end Learning Management System in **React + Node.js** with an LLM-as-a-judge system for automated resume critiques and skill gap analysis. Includes booking and payment modules.
-
-`React` `Node.js` `GPT API` `LLM-as-Judge`
-
-**3× PMI San Francisco Award Winner**
+**85% mAP · 0.78 IoU · 30+ FPS**
 
 </td>
 <td width="50%">
 
-### Neural Studio Multimodal AI Suite
-Dual-mode AI workspace using **Gemini APIs** and vector embeddings to automate literature reviews. Multi-user brainstorming canvas with dynamic knowledge network visualization.
+### [Real-Time Lane Detection](https://github.com/sandeepvijayarao09/realtime-lane-detection)
+PyTorch LaneNet with swappable EfficientNet-B0 / MobileNetV2 backbones. Binary lane mask + 4D instance embeddings for lane clustering. Mixed-precision training, cosine annealing LR, TorchScript export.
 
-`Gemini API` `Vector Embeddings` `React` `Canvas`
+`Python` `PyTorch` `EfficientNet` `MobileNetV2` `OpenCV`
 
-**Multimodal · Knowledge graph UI**
+**99% accuracy · 150 FPS on RTX 3080 · 80% faster than baseline**
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### Real-Time Human Pose Estimation
-Full **Django** web application analyzing live webcam feeds using **MediaPipe** and custom **TensorFlow** models. 33-landmark skeleton detection with activity classification.
+### [Dual LLM Routing System](https://github.com/sandeepvijayarao09/dual-llm-system)
+Three-layer cascade: pre-flight word-count gate → TF-IDF + logistic regression ML router (11 engineered features, ~0ms) → GPT-4o fallback when confidence < 0.65. SQLite-persisted user profiles with expertise level and domain history. 85.3% of queries resolved at zero API cost.
 
-`Python` `Django` `MediaPipe` `TensorFlow`
+`Python` `OpenAI API` `TF-IDF` `scikit-learn` `SQLite` `Ollama`
 
-**85% mAP · 30 FPS · IEEE AISP 2024**
+**92.6% accuracy · LLM fallback rate cut from 30.8% → 14.7%**
 
 </td>
 <td width="50%">
 
-### Enterprise LLM Architecture
-5-layer enterprise AI system design with role-based access control (IAM), multi-model routing, and data anonymization gateways to ensure privacy in organizational AI deployments.
+### [Agentic Research Assistant](https://github.com/sandeepvijayarao09/agentic-research-assistant)
+OrchestratorAgent decomposes queries and routes sub-tasks; ResearchAgent handles ArXiv search and citation extraction; ReasoningAgent runs chain-of-thought and fact-checking. Dual-layer memory: ChromaDB semantic store + sliding-window working memory with token compression.
 
-`System Design` `IAM` `Multi-Model Routing`
+`Python` `LangChain` `ChromaDB` `OpenAI API` `ArXiv API`
 
-**Enterprise-grade · Zero data leakage**
+**Plan → Reason → Act · Persistent dual-layer memory**
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### [Vision-Language Grounding](https://github.com/sandeepvijayarao09/vision-language-grounding)
+Four pipelines: CLIP (ViT-B/32) zero-shot grounding on COCO; ViT cross-modal attention heatmaps for interpretability; Stable Diffusion v1.5 text-to-image synthesis; cosine similarity + UMAP/t-SNE for shared embedding space analysis.
+
+`Python` `PyTorch` `OpenCLIP` `HuggingFace Diffusers` `scikit-learn`
+
+**CLIP · ViT attention · Stable Diffusion · Embedding analysis**
+
+</td>
+<td width="50%">
+
+### [LLM Eval & Fine-Tuning](https://github.com/sandeepvijayarao09/llm-eval-finetuning)
+Evaluation harness for LLaMA and Mistral on TruthfulQA, instruction-following, and hallucination detection (ROUGE, BLEU, BERTScore). DPO fine-tuning with LoRA adapters. INT8/INT4 quantization via bitsandbytes; vLLM backend for optimized serving.
+
+`Python` `PyTorch` `HuggingFace` `bitsandbytes` `vLLM` `LoRA`
+
+**Full pipeline: eval → DPO fine-tune → quantize → serve**
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### [Neural Studio](https://github.com/sandeepvijayarao09/Gemini-Devpost-Hackathon-Feb09) — Devpost Hackathon Feb 2026
+Infinite canvas for AI-assisted research. Research Mode: drag-and-drop PDFs/videos, Gemini auto-clusters by theme and generates citations. Creator Mode: transforms organized research into hooks, scripts, and storyboards. Local-first privacy — all data stays on device.
+
+`TypeScript` `React` `Tailwind CSS` `Gemini API` `Node.js`
+
+**Google Gemini Devpost Hackathon · Local-first architecture**
+
+</td>
+<td width="50%">
+
+### [Hospital Management System](https://github.com/sandeepvijayarao09/Hospital-Management-System-Updated)
+Full-stack healthcare platform: React 18 + TypeScript + Tailwind + Vite frontend with real-time dashboard (patient counts, appointments, revenue); patient CRUD; appointment booking with status tracking; billing and invoice module. Node.js + Express + MongoDB + JWT auth backend.
+
+`TypeScript` `React 18` `Tailwind CSS` `Node.js` `MongoDB` `JWT`
+
+**Full-stack · CRUD · Auth · Billing module**
 
 </td>
 </tr>
 </table>
+
+### Also Active
+
+| Repo | Description | Stack |
+|---|---|---|
+| [Omni-Axon](https://github.com/sandeepvijayarao09/Omni-Axon) | Stanford × DeepMind Hackathon — Gemini AI canvas via Google AI Studio | TypeScript · React · Gemini API |
+| [Computer-Vision-Coursework](https://github.com/sandeepvijayarao09/Computer-Vision-Coursework) | NEU CS 5330 — 10 projects: homography, RANSAC, YOLO traffic signs, SIFT, optical flow | Python · OpenCV · YOLOv5 |
+| [notification-urgency-prediction](https://github.com/sandeepvijayarao09/notification-urgency-prediction) | ML classifier: Urgent / Important / Ignore from notification text | Python · scikit-learn · pandas |
+| agentic-master *(private)* | Privacy-first Kotlin Multiplatform agent framework; swappable Gemma 4 / Gemini / Claude backends | Kotlin · Android · iOS |
+| Swift-Agents *(private)* | On-device iOS/macOS LLM agent framework using CoreML for zero-cloud inference | Swift · CoreML · SwiftUI |
+| AIFORG *(private)* | Personal AI orchestration layer for building and wiring custom agent pipelines | Python |
 
 ---
 
