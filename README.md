@@ -2,11 +2,11 @@
 
 # Sandeep Vijayarao
 
-### Full-Stack AI Engineer · Systems Architect · End-to-End Builder
+### Full-Stack AI Engineer · MS Computer Science @ Northeastern
 
-MS Computer Science @ Northeastern · Apple Swift Student Challenge 2026 Winner · IEEE Published
+Apple Swift Student Challenge 2026 Winner · IEEE Published Researcher
 
-I design and ship complete AI products — from responsive interfaces to multi-agent orchestration pipelines, LLM routing layers, and cloud infrastructure — proving that the best AI applications are built by engineers who own the entire stack.
+I build complete AI products — from responsive interfaces to multi-agent orchestration pipelines, LLM routing layers, and cloud infrastructure.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sandeepvijayarao/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sandeepvijayarao09)
@@ -224,10 +224,22 @@ Full **Django** web application analyzing live webcam feeds using **MediaPipe** 
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=sandeepvijayarao09&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="170" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&theme=tokyonight&hide_border=true" height="170" />
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://github-readme-stats.vercel.app/api?username=sandeepvijayarao09&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=sandeepvijayarao09&show_icons=true&theme=default&hide_border=true&count_private=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=sandeepvijayarao09&show_icons=true&theme=default&hide_border=true&count_private=true" height="170" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&theme=tokyonight&hide_border=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&theme=default&hide_border=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&theme=default&hide_border=true" height="170" />
+</picture>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" height="170" />
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&theme=default&hide_border=true&langs_count=8" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&theme=default&hide_border=true&langs_count=8" height="170" />
+</picture>
 
 </div>
 
@@ -236,8 +248,6 @@ Full **Django** web application analyzing live webcam feeds using **MediaPipe** 
 <div align="center">
 
 **Open to Full-Stack AI Engineering roles · Research collaborations welcome**
-
-*End-to-end builder. One commit at a time.*
 
 📍 San Jose, CA &nbsp;·&nbsp; 📞 +1 (408) 210-6329 &nbsp;·&nbsp; ✉️ sandeepvijayarao09@gmail.com
 
