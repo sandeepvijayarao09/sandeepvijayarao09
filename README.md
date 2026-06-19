@@ -2,11 +2,12 @@
 
 # Sandeep Vijayarao
 
-### Full-Stack AI Engineer · MS Computer Science @ Northeastern
+### Design-led AI Product Engineer · MS Computer Science @ Northeastern
 
 Apple Swift Student Challenge 2026 Winner · IEEE Published Researcher
 
-I build complete AI products — from responsive interfaces to multi-agent orchestration pipelines, LLM routing layers, and cloud infrastructure.
+I design and ship real products — on-device AI, real-time vision, and agentic systems — end-to-end and fast.
+A new prototype most weeks; the ones that work become apps people actually use.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sandeepvijayarao/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sandeepvijayarao09)
@@ -17,19 +18,39 @@ I build complete AI products — from responsive interfaces to multi-agent orche
 
 ---
 
-## Professional Summary
+## How I Build
 
-Results-driven Software Engineer specializing in **AI systems architecture**, **multi-agent orchestration**, and **full-stack development**. Proven track record of shipping end-to-end AI products — from designing responsive user interfaces to engineering robust RAG pipelines and confidence-gated LLM routing. Experienced in integrating complex APIs, managing cloud infrastructure, and building scalable platforms that bring agentic capabilities to consumer and enterprise applications.
+- **Design-led** — I start from the experience: interface, motion, and the small interaction details, then engineer the system to serve it.
+- **Products, not demos** — I ship complete, usable things — cross-platform apps, browser extensions, real backends — not throwaway notebooks.
+- **Real-time & on-device** — live transcription, 30–150 FPS vision, zero-cloud CoreML / LiteRT inference. Fast, private, and responsive by default.
+- **High velocity** — dozens of projects shipped across iOS, Android, web, and ML. I prototype constantly and graduate the winners into real apps.
 
 ---
 
-## What I Build
+## Products I'm Shipping
+
+> Consumer-facing apps where the experience matters as much as the model — designed, built, and shipped end-to-end.
+
+| Product | What it is | Surface | Stack |
+|---|---|---|---|
+| **Notova** — [iOS](https://github.com/sandeepvijayarao09/notova-ios) · [Android](https://github.com/sandeepvijayarao09/notova-android) · [Backend](https://github.com/sandeepvijayarao09/notova-backend) | On-device AI voice capture & notes — record from any mic or file, transcribe + summarize fully on-device, export to your apps | iOS · Android · Cloud | SwiftUI · Kotlin/Compose · OAuth broker |
+| [**Anu**](https://github.com/sandeepvijayarao09/Anu-iOS) | Voice-first, on-device agentic AI for iOS — private by design, runs Gemma locally | iOS | Swift · Gemma 4 E4B · LiteRT |
+| [**autofill-pro**](https://github.com/sandeepvijayarao09/autofill-pro) | Fills job applications instantly across 30+ ATS platforms, with an AI fallback for custom questions — all data stays on device | Chrome Extension | JavaScript · On-device |
+| [**TRALH**](https://github.com/sandeepvijayarao09/tralh) | The Royal Authentic Luxury House — a crafted brand experience with Apple-grade structure, sovereign identity, and motion design | Web | HTML · CSS · Motion |
+| **meeting-bot** *(private)* | Local-first macOS meeting notetaker — on-device Whisper transcription with optional summaries; native app, CLI, or extension | macOS | SwiftUI · Whisper · CLI |
+| **Sphere** *(private)* | Privacy-first social platform for creators — subscriptions, AI-weighted feed, and communities | Web | Next.js · Fastify · Prisma |
+| **Rosewood Concierge** *(private)* | AI luxury-hotel concierge — Claude-powered chat, ElevenLabs voice, guest memory, and proactive agents | Web | Next.js · Claude · ElevenLabs |
+| **Tryon** *(private)* | 2D photo virtual try-on, stress-tested 1000+ ways with hardened garment coverage | App | Vision · Generative AI |
+
+---
+
+## Engineering Depth
 
 <table>
 <tr>
 <td width="50%">
 
-### Systems & Agents
+### AI Systems & Agents
 - **3-Layer LLM Router** — TF-IDF ML gate + GPT-4o fallback; 92.6% accuracy, 85% queries at zero API cost
 - **Multi-Agent Research Loop** — Orchestrator + Research + Reasoning agents, dual ChromaDB/sliding-window memory
 - **RAG Pipelines** — Vector embeddings, ArXiv APIs, semantic retrieval with automatic token compression
@@ -38,9 +59,9 @@ Results-driven Software Engineer specializing in **AI systems architecture**, **
 </td>
 <td width="50%">
 
-### Full-Stack Products
-- **React / Angular / Node.js** — Hospital management, LMS, AI research canvas, asset dashboards
-- **Vision Pipelines** — LaneNet at 150 FPS; MediaPipe pose at 30 FPS; CLIP zero-shot grounding
+### Product & Full-Stack
+- **iOS / Android / Web** — cross-platform consumer apps with design-led, motion-rich interfaces
+- **Real-Time Vision** — LaneNet at 150 FPS; MediaPipe pose at 30 FPS; CLIP zero-shot grounding
 - **Swift + CoreML** — On-device iOS agents with zero-cloud inference (Apple Swift Student Challenge 2026)
 - **Azure + Docker + Kubernetes** — LLaMA-based Azure AI service; containerized microservice backends
 
@@ -65,6 +86,16 @@ Results-driven Software Engineer specializing in **AI systems architecture**, **
 ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 
+**Design & Frontend**
+
+![SwiftUI](https://img.shields.io/badge/SwiftUI-FA7343?style=flat-square&logo=swift&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+
 **AI / ML**
 
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
@@ -84,13 +115,10 @@ Results-driven Software Engineer specializing in **AI systems architecture**, **
 ![LLaMA](https://img.shields.io/badge/LLaMA-0467DF?style=flat-square&logo=meta&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
 
-**Full-Stack & Infrastructure**
+**Infrastructure**
 
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-FA7343?style=flat-square&logo=swift&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white)
@@ -101,7 +129,7 @@ Results-driven Software Engineer specializing in **AI systems architecture**, **
 
 ---
 
-## Featured Projects
+## Real-Time & Research Projects
 
 <table>
 <tr>
@@ -161,34 +189,12 @@ Four pipelines: CLIP (ViT-B/32) zero-shot grounding on COCO; ViT cross-modal att
 </td>
 <td width="50%">
 
-### [LLM Eval & Fine-Tuning](https://github.com/sandeepvijayarao09/llm-eval-finetuning)
-Evaluation harness for LLaMA and Mistral on TruthfulQA, instruction-following, and hallucination detection (ROUGE, BLEU, BERTScore). DPO fine-tuning with LoRA adapters. INT8/INT4 quantization via bitsandbytes; vLLM backend for optimized serving.
-
-`Python` `PyTorch` `HuggingFace` `bitsandbytes` `vLLM` `LoRA`
-
-**Full pipeline: eval → DPO fine-tune → quantize → serve**
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
 ### [Neural Studio](https://github.com/sandeepvijayarao09/Gemini-Devpost-Hackathon-Feb09) — Devpost Hackathon Feb 2026
 Infinite canvas for AI-assisted research. Research Mode: drag-and-drop PDFs/videos, Gemini auto-clusters by theme and generates citations. Creator Mode: transforms organized research into hooks, scripts, and storyboards. Local-first privacy — all data stays on device.
 
 `TypeScript` `React` `Tailwind CSS` `Gemini API` `Node.js`
 
 **Google Gemini Devpost Hackathon · Local-first architecture**
-
-</td>
-<td width="50%">
-
-### [Hospital Management System](https://github.com/sandeepvijayarao09/Hospital-Management-System-Updated)
-Full-stack healthcare platform: React 18 + TypeScript + Tailwind + Vite frontend with real-time dashboard (patient counts, appointments, revenue); patient CRUD; appointment booking with status tracking; billing and invoice module. Node.js + Express + MongoDB + JWT auth backend.
-
-`TypeScript` `React 18` `Tailwind CSS` `Node.js` `MongoDB` `JWT`
-
-**Full-stack · CRUD · Auth · Billing module**
 
 </td>
 </tr>
@@ -199,11 +205,11 @@ Full-stack healthcare platform: React 18 + TypeScript + Tailwind + Vite frontend
 | Repo | Description | Stack |
 |---|---|---|
 | [Omni-Axon](https://github.com/sandeepvijayarao09/Omni-Axon) | Stanford × DeepMind Hackathon — Gemini AI canvas via Google AI Studio | TypeScript · React · Gemini API |
+| [LLM Eval & Fine-Tuning](https://github.com/sandeepvijayarao09/llm-eval-finetuning) | Eval harness for LLaMA/Mistral → DPO fine-tune → INT8/INT4 quantize → vLLM serve | Python · HuggingFace · LoRA · vLLM |
 | [Computer-Vision-Coursework](https://github.com/sandeepvijayarao09/Computer-Vision-Coursework) | NEU CS 5330 — 10 projects: homography, RANSAC, YOLO traffic signs, SIFT, optical flow | Python · OpenCV · YOLOv5 |
-| [notification-urgency-prediction](https://github.com/sandeepvijayarao09/notification-urgency-prediction) | ML classifier: Urgent / Important / Ignore from notification text | Python · scikit-learn · pandas |
 | agentic-master *(private)* | Privacy-first Kotlin Multiplatform agent framework; swappable Gemma 4 / Gemini / Claude backends | Kotlin · Android · iOS |
 | Swift-Agents *(private)* | On-device iOS/macOS LLM agent framework using CoreML for zero-cloud inference | Swift · CoreML · SwiftUI |
-| AIFORG *(private)* | Personal AI orchestration layer for building and wiring custom agent pipelines | Python |
+| AIFORG *(private)* | Personal AI orchestration layer for building and wiring custom agent pipelines | Python · FastAPI · RAG |
 
 ---
 
@@ -280,7 +286,7 @@ Full-stack healthcare platform: React 18 + TypeScript + Tailwind + Vite frontend
 
 <div align="center">
 
-**Open to Full-Stack AI Engineering roles · Research collaborations welcome**
+**Open to AI Product Engineering & Design-Engineering roles · Research collaborations welcome**
 
 📍 San Jose, CA &nbsp;·&nbsp; 📞 +1 (408) 210-6329 &nbsp;·&nbsp; ✉️ sandeepvijayarao09@gmail.com
 
