@@ -53,10 +53,10 @@ Fills job applications across **30+ ATS platforms** with an AI fallback for cust
 <tr>
 <td width="33%" valign="top">
 
-#### 👑 [TRALH](https://github.com/sandeepvijayarao09/tralh)
-The Royal Authentic Luxury House — a crafted brand experience with Apple-grade structure and motion design.
+#### 🌐 Sphere *(private)*
+Privacy-first social platform for creators — subscriptions, an AI-weighted feed, and communities.
 
-`HTML` `CSS` `Motion`
+`Next.js` `Fastify` `Prisma`
 
 </td>
 <td width="33%" valign="top">
@@ -78,7 +78,7 @@ AI luxury-hotel concierge — Claude chat, ElevenLabs voice, guest memory, proac
 </tr>
 </table>
 
-> Also building: **Sphere** *(privacy-first creator social platform — Next.js · Fastify · Prisma)* and **Tryon** *(2D photo virtual try-on, stress-tested 1000+ ways)*.
+> Also building: **Tryon** *(2D photo virtual try-on, stress-tested 1000+ ways)* and more across iOS, web, and ML.
 
 ---
 
