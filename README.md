@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1437,100:6d28d9&height=210&section=header&text=Sandeep%20Vijayarao&fontSize=46&fontColor=ffffff&fontAlignY=36&desc=Design-led%20AI%20Product%20Engineer&descAlignY=58&descSize=18&animation=fadeIn" width="100%" alt="Sandeep Vijayarao — Design-led AI Product Engineer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0b0b,100:b8860b&height=210&section=header&text=Sandeep%20Vijayarao&fontSize=46&fontColor=F5DEA3&fontAlignY=36&desc=Design-led%20AI%20Product%20Engineer&descAlignY=58&descSize=18&animation=fadeIn" width="100%" alt="Sandeep Vijayarao — Design-led AI Product Engineer" />
 
 <a href="https://github.com/sandeepvijayarao09">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=22&duration=2800&pause=700&color=8B7BE8&center=true&vCenter=true&width=760&lines=I+design+and+ship+real+products;On-device+AI+%C2%B7+Real-time+vision+%C2%B7+Agentic+systems;Apple+Swift+Student+Challenge+2026+Winner;A+new+prototype+most+weeks+%E2%80%94+winners+become+apps" alt="What I do" />
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=22&duration=2800&pause=700&color=D4AF37&center=true&vCenter=true&width=760&lines=I+design+and+ship+real+products;On-device+AI+%C2%B7+Real-time+vision+%C2%B7+Agentic+systems;Apple+Swift+Student+Challenge+2026+Winner;A+new+prototype+most+weeks+%E2%80%94+winners+become+apps" alt="What I do" />
 </a>
 
 <br/><br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sandeepvijayarao/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-6d28d9?style=for-the-badge&logo=vercel&logoColor=white)](https://sandeepvijayarao09.github.io)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sandeepvijayarao09@gmail.com)
-![Profile views](https://komarev.com/ghpvc/?username=sandeepvijayarao09&style=for-the-badge&color=6d28d9&label=PROFILE+VIEWS)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0a0a0a?style=for-the-badge&logo=linkedin&logoColor=D4AF37)](https://www.linkedin.com/in/sandeepvijayarao/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-0a0a0a?style=for-the-badge&logo=vercel&logoColor=D4AF37)](https://sandeepvijayarao09.github.io)
+[![Email](https://img.shields.io/badge/Email-0a0a0a?style=for-the-badge&logo=gmail&logoColor=D4AF37)](mailto:sandeepvijayarao09@gmail.com)
+![Profile views](https://komarev.com/ghpvc/?username=sandeepvijayarao09&style=for-the-badge&color=B8860B&label=PROFILE+VIEWS)
 
 </div>
 
@@ -151,21 +151,21 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=py,ts,js,swift,kotlin,java,cpp,react,nextjs,tailwind,angular,nodejs,django,vite,pytorch,tensorflow,opencv,docker,kubernetes,azure,supabase,vercel,figma&perline=12" alt="Tech stack" />
+<img src="https://skillicons.dev/icons?i=py,ts,js,swift,kotlin,java,cpp,react,nextjs,tailwind,angular,nodejs,django,vite,pytorch,tensorflow,opencv,docker,kubernetes,azure,supabase,vercel,figma&perline=12&theme=dark" alt="Tech stack" />
 
 <br/><br/>
 
 **AI · LLMs · Inference**
 
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
-![Claude](https://img.shields.io/badge/Anthropic-191919?style=flat-square&logo=anthropic&logoColor=white)
-![LLaMA](https://img.shields.io/badge/LLaMA-0467DF?style=flat-square&logo=meta&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
-![CoreML](https://img.shields.io/badge/CoreML-000000?style=flat-square&logo=apple&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![MediaPipe](https://img.shields.io/badge/MediaPipe-00897B?style=flat-square&logo=google&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-0a0a0a?style=flat-square&logo=openai&logoColor=D4AF37)
+![Gemini](https://img.shields.io/badge/Gemini-0a0a0a?style=flat-square&logo=googlegemini&logoColor=D4AF37)
+![Claude](https://img.shields.io/badge/Anthropic-0a0a0a?style=flat-square&logo=anthropic&logoColor=D4AF37)
+![LLaMA](https://img.shields.io/badge/LLaMA-0a0a0a?style=flat-square&logo=meta&logoColor=D4AF37)
+![Ollama](https://img.shields.io/badge/Ollama-0a0a0a?style=flat-square&logo=ollama&logoColor=D4AF37)
+![CoreML](https://img.shields.io/badge/CoreML-0a0a0a?style=flat-square&logo=apple&logoColor=D4AF37)
+![Hugging Face](https://img.shields.io/badge/HuggingFace-0a0a0a?style=flat-square&logo=huggingface&logoColor=D4AF37)
+![LangChain](https://img.shields.io/badge/LangChain-0a0a0a?style=flat-square&logo=langchain&logoColor=D4AF37)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0a0a0a?style=flat-square&logo=google&logoColor=D4AF37)
 
 </div>
 
@@ -184,12 +184,12 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=sandeepvijayarao09&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="stats" />
-<img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&theme=tokyonight&hide_border=true" alt="streak" />
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=sandeepvijayarao09&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&bg_color=0b0b0b&title_color=D4AF37&icon_color=D4AF37&text_color=d9d4c5" alt="stats" />
+<img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&hide_border=true&background=0b0b0b&ring=D4AF37&fire=D4AF37&currStreakLabel=D4AF37&sideLabels=d9d4c5&currStreakNum=ffffff&sideNums=ffffff&dates=8a8a8a" alt="streak" />
 
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="top langs" />
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&hide_border=true&langs_count=8&bg_color=0b0b0b&title_color=D4AF37&text_color=d9d4c5" alt="top langs" />
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=sandeepvijayarao09&theme=tokyo-night&hide_border=true&area=true&color=8B7BE8&line=8B7BE8&point=ffffff" alt="contribution graph" width="100%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=sandeepvijayarao09&hide_border=true&bg_color=0b0b0b&color=D4AF37&line=D4AF37&point=ffffff&title_color=D4AF37&area=true" alt="contribution graph" width="100%" />
 
 </div>
 
@@ -225,10 +225,10 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 <div align="center">
 
-![Open to](https://img.shields.io/badge/Open%20to-AI%20Product%20%26%20Design%20Engineering%20roles-6d28d9?style=for-the-badge)
+![Open to](https://img.shields.io/badge/Open%20to-AI%20Product%20%26%20Design%20Engineering%20roles-B8860B?style=for-the-badge&labelColor=0a0a0a)
 
 📍 San Jose, CA &nbsp;·&nbsp; ✉️ sandeepvijayarao09@gmail.com &nbsp;·&nbsp; 📞 +1 (408) 210-6329
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6d28d9,100:0b1437&height=120&section=footer" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:b8860b,100:0b0b0b&height=120&section=footer" width="100%" alt="" />
 
 </div>
