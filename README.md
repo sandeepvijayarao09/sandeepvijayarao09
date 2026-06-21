@@ -11,7 +11,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0a0a0a?style=for-the-badge&logo=linkedin&logoColor=D4AF37)](https://www.linkedin.com/in/sandeepvijayarao/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-0a0a0a?style=for-the-badge&logo=vercel&logoColor=D4AF37)](https://sandeepvijayarao09.github.io)
 [![Email](https://img.shields.io/badge/Email-0a0a0a?style=for-the-badge&logo=gmail&logoColor=D4AF37)](mailto:sandeepvijayarao09@gmail.com)
-![Profile views](https://komarev.com/ghpvc/?username=sandeepvijayarao09&style=for-the-badge&color=B8860B&label=PROFILE+VIEWS)
 
 </div>
 
@@ -188,8 +187,6 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&hide_border=true&background=0b0b0b&ring=D4AF37&fire=D4AF37&currStreakLabel=D4AF37&sideLabels=d9d4c5&currStreakNum=ffffff&sideNums=ffffff&dates=8a8a8a" alt="streak" />
 
 <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&hide_border=true&langs_count=8&bg_color=0b0b0b&title_color=D4AF37&text_color=d9d4c5" alt="top langs" />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=sandeepvijayarao09&hide_border=true&bg_color=0b0b0b&color=D4AF37&line=D4AF37&point=ffffff&title_color=D4AF37&area=true" alt="contribution graph" width="100%" />
 
 </div>
 
