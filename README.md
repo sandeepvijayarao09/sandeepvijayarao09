@@ -26,7 +26,7 @@
 <td width="33%" valign="top">
 
 #### 🎙️ Notova
-On-device AI voice capture & notes — record from any mic or file and export anywhere. On-device transcription (Whisper) and summarization (Gemma 3n) are in progress.
+On-device AI voice capture & notes — record from any mic or file, transcribe and summarize **on-device** (Apple Speech + Foundation Models / Gemma on iOS; Gemma 3n via LiteRT-LM on Android), export anywhere.
 
 [`iOS`](https://github.com/sandeepvijayarao09/notova-ios) · [`Android`](https://github.com/sandeepvijayarao09/notova-android) · [`Backend`](https://github.com/sandeepvijayarao09/notova-backend)
 <br/>`SwiftUI` `Compose` `OAuth`
