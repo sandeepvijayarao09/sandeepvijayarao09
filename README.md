@@ -26,7 +26,7 @@
 <td width="33%" valign="top">
 
 #### 🎙️ Notova
-On-device AI voice capture & notes — record from any mic or file, transcribe + summarize **fully on-device**, export anywhere.
+On-device AI voice capture & notes — record from any mic or file and export anywhere. On-device transcription (Whisper) and summarization (Gemma 3n) are in progress.
 
 [`iOS`](https://github.com/sandeepvijayarao09/notova-ios) · [`Android`](https://github.com/sandeepvijayarao09/notova-android) · [`Backend`](https://github.com/sandeepvijayarao09/notova-backend)
 <br/>`SwiftUI` `Compose` `OAuth`
@@ -60,8 +60,8 @@ Privacy-first social platform for creators — subscriptions, an AI-weighted fee
 </td>
 <td width="33%" valign="top">
 
-#### 📝 meeting-bot *(private)*
-Local-first macOS meeting notetaker — on-device Whisper transcription; native app, CLI & extension.
+#### 📝 [meeting-bot](https://github.com/sandeepvijayarao09/meeting-bot)
+Local-first meeting notetaker — on-device Whisper transcription, talk-time analytics; macOS & iOS apps, Chrome extension, Python CLI.
 
 `SwiftUI` `Whisper`
 
@@ -81,7 +81,11 @@ AI luxury-hotel concierge — Claude chat, ElevenLabs voice, guest memory, proac
 
 ---
 
-## ⚡ Real-Time & Research Projects
+## 🔬 Research & Real-Time Projects
+
+> **[RAG From Scratch](https://github.com/sandeepvijayarao09/rag-from-scratch)** — I implemented ten recommended RAG techniques and measured each on BEIR SciFact (nDCG@10). **Eight of ten made retrieval worse**; the repo explains why, and shows the generator, not retrieval, was the ceiling.
+>
+> **[Dual LLM Routing](https://github.com/sandeepvijayarao09/dual-llm-system)** — cascade router, 92.6% on a 1,000-query eval; NeurIPS-format paper published as our final project for Northeastern's graduate Generative AI course.
 
 <table>
 <tr>
@@ -110,8 +114,8 @@ PyTorch LaneNet, swappable EfficientNet/MobileNet backbones, instance-embedding 
 #### [Dual LLM Routing System](https://github.com/sandeepvijayarao09/dual-llm-system)
 3-layer cascade: word-count gate → TF-IDF ML router (~0ms) → GPT-4o fallback. SQLite user profiles.
 
-`OpenAI` `scikit-learn` `Ollama`
-<br/>**`92.6% acc · 85% queries at $0`**
+`OpenAI` `scikit-learn` `SQLite`
+<br/>**`92.6% acc · 85% routed with no API call`**
 
 </td>
 <td width="50%" valign="top">
@@ -172,7 +176,7 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 ## 🏆 Highlights
 
-- 🥇 **Apple Swift Student Challenge 2026 — Winner** · privacy-first, voice-driven agentic iOS app with on-device CoreML inference
+- 🥇 **Apple Swift Student Challenge 2026 — Winner** · privacy-first, voice-driven agentic iOS app running Gemma 4 on-device via LiteRT
 - 🥇 **3× PMI San Francisco Award** · full-stack design & build of the SkillGap AI LMS
 - 🥇 **NASA NSS Space Contest** · led winning team
 - 📄 **IEEE AISP 2024** · *Real-Time Human Pose Estimation Using MediaPipe* (presented)
@@ -199,7 +203,7 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 | Role | Organization | Period |
 |---|---|---|
-| Graduate Teaching Assistant — Computer Vision | Northeastern University, San Jose | Sep 2025 – Present |
+| Graduate Teaching Assistant — HCI & Pattern Recognition / Computer Vision (Fall 2026); Generative AI, Computer Vision, HCI (2025–26) | Northeastern University, San Jose | Sep 2025 – Present |
 | Student Life Operations Supervisor | Northeastern University, Oakland | Nov 2025 – Present |
 | AI Developer | Trominosoft, Hyderabad | Feb 2025 – Aug 2025 |
 | Artificial Intelligence Intern | Infosys Springboard | Sep 2024 – Dec 2024 |
@@ -222,7 +226,7 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 <div align="center">
 
-![Open to](https://img.shields.io/badge/Open%20to-AI%20Product%20%26%20Design%20Engineering%20roles-B8860B?style=for-the-badge&labelColor=0a0a0a)
+![Open to](https://img.shields.io/badge/Open%20to-AI%20Research%2C%20Product%20%26%20Design%20Engineering%20roles-B8860B?style=for-the-badge&labelColor=0a0a0a)
 
 📍 San Jose, CA &nbsp;·&nbsp; ✉️ sandeepvijayarao09@gmail.com &nbsp;·&nbsp; 📞 +1 (408) 210-6329
 
