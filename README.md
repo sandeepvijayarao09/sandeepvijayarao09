@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0b0b,100:b8860b&height=210&section=header&text=Sandeep%20Vijayarao&fontSize=46&fontColor=F5DEA3&fontAlignY=36&desc=Design-led%20AI%20Product%20Engineer&descAlignY=58&descSize=18&animation=fadeIn" width="100%" alt="Sandeep Vijayarao — Design-led AI Product Engineer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0b0b,100:b8860b&height=210&section=header&text=Sandeep%20Vijayarao&fontSize=46&fontColor=F5DEA3&fontAlignY=36&desc=Software%20%26%20AI%20Engineer%20%C2%B7%20iOS%20%26%20Android%20%C2%B7%20On-device%20AI&descAlignY=58&descSize=18&animation=fadeIn" width="100%" alt="Sandeep Vijayarao — Software & AI Engineer · iOS & Android · On-device AI" />
 
 <a href="https://github.com/sandeepvijayarao09">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=22&duration=2800&pause=700&color=D4AF37&center=true&vCenter=true&width=760&lines=I+design+and+ship+real+products;On-device+AI+%C2%B7+Real-time+vision+%C2%B7+Agentic+systems;Apple+Swift+Student+Challenge+2026+Winner;A+new+prototype+most+weeks+%E2%80%94+winners+become+apps" alt="What I do" />
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=22&duration=2800&pause=700&color=D4AF37&center=true&vCenter=true&width=760&lines=I+design+and+ship+real+products;On-device+AI+%C2%B7+iOS+%26+Android+%C2%B7+Agentic+systems;Apple+Swift+Student+Challenge+2026+Winner;Open+to+SWE+%C2%B7+AI+Eng+%C2%B7+iOS+%26+Android+%C2%B7+FDE+roles" alt="What I do" />
 </a>
 
 <br/><br/>
@@ -15,11 +15,11 @@
 </div>
 
 > **I turn AI models into products people actually use.** Design the experience first, then engineer the system to serve it — on-device, real-time, and privacy-first by default.
-> MS Computer Science @ Northeastern · IEEE-published researcher · building in public, shipping constantly.
+> MS Computer Science @ Northeastern · IEEE-published researcher · Apple Swift Student Challenge 2026 winner.
 
 ---
 
-## 🚀 Products I'm Shipping
+## 🚀 Selected Work
 
 <table>
 <tr>
@@ -43,59 +43,54 @@ Voice-first, **on-device agentic AI** for iOS — private by design, runs Gemma 
 <td width="33%" valign="top">
 
 #### ⚡ [autofill-pro](https://github.com/sandeepvijayarao09/autofill-pro)
-Fills job applications across **30+ ATS platforms** with an AI fallback for custom questions — data stays on device.
+Chrome extension that fills job applications: **44 fields across 50+ application platforms**, an AI fallback for custom questions, and a 1,300-case matching test suite. Data stays on device.
 
-`JavaScript` `Chrome Extension`
+`JavaScript` `Chrome MV3`
 
 </td>
 </tr>
 <tr>
 <td width="33%" valign="top">
 
-#### 🌐 Sphere *(private)*
-Privacy-first social platform for creators — subscriptions, an AI-weighted feed, and communities.
+#### 📚 [RAG From Scratch](https://github.com/sandeepvijayarao09/rag-from-scratch)
+Ten recommended RAG techniques, each measured on BEIR SciFact (nDCG@10). **Eight of ten made retrieval worse**; the repo shows why. Also an [interactive 15-level guide](https://sandeepvijayarao09.github.io/RAG/).
 
-`Next.js` `Fastify` `Prisma`
+`Python` `BEIR` `bge`
 
 </td>
 <td width="33%" valign="top">
 
 #### 📝 [meeting-bot](https://github.com/sandeepvijayarao09/meeting-bot)
-Local-first meeting notetaker — on-device Whisper transcription, talk-time analytics; macOS & iOS apps, Chrome extension, Python CLI.
+Local-first meeting notetaker for macOS — on-device Whisper transcription with optional summaries, via a native SwiftUI app, CLI, or Chrome extension.
 
-`SwiftUI` `Whisper`
+`SwiftUI` `Whisper` `Python`
 
 </td>
 <td width="33%" valign="top">
 
-#### 🏨 Rosewood Concierge *(private)*
-AI luxury-hotel concierge — Claude chat, ElevenLabs voice, guest memory, proactive agents.
+#### 🛡️ [Agent-Certifier](https://github.com/sandeepvijayarao09/Agent-Certifier)
+Testing and certification for AI agents — 60 static-analysis checks across 6 categories, weighted scoring, and certification levels.
 
-`Next.js` `Claude` `ElevenLabs`
+`FastAPI` `Next.js` `Python`
 
 </td>
 </tr>
 </table>
 
-> Also building: **Tryon** *(2D photo virtual try-on, stress-tested 1000+ ways)* and more across iOS, web, and ML.
+> **In progress (private, demo on request):** **Tryon** — 360° video → 3D body mesh, size-chart fit and 2D photo try-on, with web, Android and iOS SDKs · **Sphere** — a creator social platform · **Rosewood Concierge** — an AI hotel concierge with voice.
 
 ---
 
-## 🔬 Research & Real-Time Projects
-
-> **[RAG From Scratch](https://github.com/sandeepvijayarao09/rag-from-scratch)** — I implemented ten recommended RAG techniques and measured each on BEIR SciFact (nDCG@10). **Eight of ten made retrieval worse**; the repo explains why, and shows the generator, not retrieval, was the ceiling.
->
-> **[Dual LLM Routing](https://github.com/sandeepvijayarao09/dual-llm-system)** — cascade router, 92.6% on a 1,000-query eval; NeurIPS-format paper published as our final project for Northeastern's graduate Generative AI course.
+## 🔬 Research & ML Projects
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
 #### [Real-Time Pose Estimation](https://github.com/sandeepvijayarao09/realtime-pose-estimation) ⭐
-**IEEE AISP 2024.** MediaPipe Holistic + LSTM classifies 11 activities from 33 3D landmarks. COCO OKS validation.
+**IEEE AISP 2024** (peer-reviewed, presented). MediaPipe Holistic + LSTM classifies 11 activities from 33 3D landmarks.
 
 `MediaPipe` `TensorFlow` `OpenCV`
-<br/>**`85% mAP · 0.78 IoU · 30+ FPS`**
 
 </td>
 <td width="50%" valign="top">
@@ -104,7 +99,6 @@ AI luxury-hotel concierge — Claude chat, ElevenLabs voice, guest memory, proac
 PyTorch LaneNet, swappable EfficientNet/MobileNet backbones, instance-embedding clustering, TorchScript export.
 
 `PyTorch` `EfficientNet` `OpenCV`
-<br/>**`99% acc · 150 FPS · 80% faster`**
 
 </td>
 </tr>
@@ -112,10 +106,10 @@ PyTorch LaneNet, swappable EfficientNet/MobileNet backbones, instance-embedding 
 <td width="50%" valign="top">
 
 #### [Dual LLM Routing System](https://github.com/sandeepvijayarao09/dual-llm-system)
-3-layer cascade: word-count gate → TF-IDF ML router (~0ms) → GPT-4o fallback. SQLite user profiles.
+Cascade router: TF-IDF + logistic-regression router → GPT-4o-mini classifier → GPT-4o. NeurIPS-format paper written as our final project for Northeastern's graduate Generative AI course.
 
 `OpenAI` `scikit-learn` `SQLite`
-<br/>**`92.6% acc · 85% routed with no API call`**
+<br/>**`92.6% on a 1,000-query eval · 85% routed with no API call`**
 
 </td>
 <td width="50%" valign="top">
@@ -176,7 +170,7 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 ## 🏆 Highlights
 
-- 🥇 **Apple Swift Student Challenge 2026 — Winner** · privacy-first, voice-driven agentic iOS app running Gemma 4 on-device via LiteRT
+- 🥇 **Apple Swift Student Challenge 2026 — Winner** · [Anu](https://github.com/sandeepvijayarao09/Anu-iOS), a privacy-first, voice-driven agentic iOS app running Gemma 4 on-device via LiteRT
 - 🥇 **3× PMI San Francisco Award** · full-stack design & build of the SkillGap AI LMS
 - 🥇 **NASA NSS Space Contest** · led winning team
 - 📄 **IEEE AISP 2024** · *Real-Time Human Pose Estimation Using MediaPipe* (presented)
@@ -188,8 +182,6 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 <div align="center">
 
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=sandeepvijayarao09&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&bg_color=0b0b0b&title_color=D4AF37&icon_color=D4AF37&text_color=d9d4c5" alt="stats" />
-<img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=sandeepvijayarao09&hide_border=true&background=0b0b0b&ring=D4AF37&fire=D4AF37&currStreakLabel=D4AF37&sideLabels=d9d4c5&currStreakNum=ffffff&sideNums=ffffff&dates=8a8a8a" alt="streak" />
-
 <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sandeepvijayarao09&layout=compact&hide_border=true&langs_count=8&bg_color=0b0b0b&title_color=D4AF37&text_color=d9d4c5" alt="top langs" />
 
 </div>
@@ -203,7 +195,7 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 | Role | Organization | Period |
 |---|---|---|
-| Graduate Teaching Assistant — HCI & Pattern Recognition / Computer Vision (Fall 2026); Generative AI, Computer Vision, HCI (2025–26) | Northeastern University, San Jose | Sep 2025 – Present |
+| Graduate Teaching Assistant — Computer Vision, Generative AI, HCI | Northeastern University, San Jose | Sep 2025 – Present |
 | Student Life Operations Supervisor | Northeastern University, Oakland | Nov 2025 – Present |
 | AI Developer | Trominosoft, Hyderabad | Feb 2025 – Aug 2025 |
 | Artificial Intelligence Intern | Infosys Springboard | Sep 2024 – Dec 2024 |
@@ -226,9 +218,9 @@ Infinite canvas for AI research → creation. Gemini auto-clusters PDFs/video; t
 
 <div align="center">
 
-![Open to](https://img.shields.io/badge/Open%20to-AI%20Research%2C%20Product%20%26%20Design%20Engineering%20roles-B8860B?style=for-the-badge&labelColor=0a0a0a)
+![Open to](https://img.shields.io/badge/Open%20to-SWE%20%C2%B7%20AI%20Engineer%20%C2%B7%20iOS%20%2F%20Android%20%C2%B7%20FDE%20%E2%80%94%20Intern%20%26%20New%20Grad-B8860B?style=for-the-badge&labelColor=0a0a0a)
 
-📍 San Jose, CA &nbsp;·&nbsp; ✉️ sandeepvijayarao09@gmail.com &nbsp;·&nbsp; 📞 +1 (408) 210-6329
+📍 San Jose, CA &nbsp;·&nbsp; ✉️ sandeepvijayarao09@gmail.com
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:b8860b,100:0b0b0b&height=120&section=footer" width="100%" alt="" />
 
