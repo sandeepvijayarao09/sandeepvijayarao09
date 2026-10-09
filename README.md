@@ -43,7 +43,7 @@ Voice-first, **on-device agentic AI** for iOS — private by design, runs Gemma 
 <td width="33%" valign="top">
 
 #### ⚡ [autofill-pro](https://github.com/sandeepvijayarao09/autofill-pro)
-Chrome extension that fills job applications: **44 fields across 50+ application platforms**, an AI fallback for custom questions, and a 1,300-case matching test suite. Data stays on device.
+Chrome extension that fills job applications: **44 fields across 46 tested platforms**, an AI fallback for custom questions, and a 1,300-case matching test suite. Contact details are redacted on-device before any AI call.
 
 `JavaScript` `Chrome MV3`
 
@@ -53,7 +53,7 @@ Chrome extension that fills job applications: **44 fields across 50+ application
 <td width="33%" valign="top">
 
 #### 📚 [RAG From Scratch](https://github.com/sandeepvijayarao09/rag-from-scratch)
-Ten recommended RAG techniques, each measured on BEIR SciFact (nDCG@10). **Eight of ten made retrieval worse**; the repo shows why. Also an [interactive 15-level guide](https://sandeepvijayarao09.github.io/RAG/).
+Ten recommended RAG techniques, each measured on BEIR SciFact (nDCG@10). **Seven of ten made retrieval worse**; the repo shows why. Also an [interactive 15-level guide](https://sandeepvijayarao09.github.io/RAG/).
 
 `Python` `BEIR` `bge`
 
