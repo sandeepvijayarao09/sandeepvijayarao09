@@ -13,19 +13,20 @@ I train and fine-tune small models, run them on phones and laptops, and measure 
 **[DeviceControlSlm](https://github.com/sandeepvijayarao09/DeviceControlSlm)**: a small language model for on-device phone and Mac control
 - I trained a ~4.1M-parameter transformer from scratch (my own architecture, tokenizer and weights) and compared it with LoRA-tuned Qwen2.5-0.5B on DeviceControlBench, a benchmark I built.
 - **Result:**
-  - Familiar phrasing (in-distribution): the scratch model wins, 67.2% vs 51.6%.
-  - New phrasing (held out): it falls to 32.7%, below the fine-tuned Qwen's 36.4%.
-  - The pretrained model generalizes better.
-- **Method:** a held-out phrasing split, a train/test contamination gate, confidence intervals, and a confirmation gate that kept the unsafe-execution rate at 0% for every model.
+  - Familiar phrasing (in-distribution): the scratch model wins, 67.2% vs 51.6% (43 vs 33 of 64 tasks, McNemar p = 0.013).
+  - New phrasing (held out): the lead disappears, 32.7% vs 36.4% (18 vs 20 of 55, p = 0.82), a statistical tie.
+  - Only the scratch model's drop is significant, which points to pretraining as the source of robustness.
+- **Method:** a held-out phrasing split, a train/test contamination gate, confidence intervals, paired McNemar tests, and a confirmation gate that kept the unsafe-execution rate at 0% for every model.
 - `PyTorch` `LoRA` `MLX` `Core ML` `App Intents`
 
 **[RAG From Scratch](https://github.com/sandeepvijayarao09/rag-from-scratch)**: ten retrieval techniques, each measured on BEIR SciFact (nDCG@10)
-- **Result:** seven of the ten made retrieval worse. Only two helped:
-  - weighted hybrid search: +0.010
-  - cross-encoder reranking on top of BM25: +0.041
-- **Method:** I checked the baseline (`bge-base`, 0.759) against a published figure before building anything on it.
+- **Result**, tested with paired bootstrap CIs (Holm-corrected) across three embedding models:
+  - LLM query rewriting (HyDE, step-back, decomposition) made retrieval significantly worse, even with a 12B rewriter.
+  - A strong reranker made it significantly better: Qwen3-Reranker-4B, +0.044 on dense and +0.110 on BM25.
+  - Chunking, RRF, multi-query, contextual retrieval and late interaction made no detectable difference.
+- **Method:** I checked the baseline (`bge-base`, 0.759) against a published figure before building anything on it. My first write-up said "seven of ten made it worse" from raw means; the significance tests showed most of that was noise, and I corrected it.
 - CRAG-style document grading scored 0.50 balanced accuracy, which is chance level.
-- `Python` `BEIR` `bge` `cross-encoders` · [interactive guide](https://sandeepvijayarao09.github.io/RAG/)
+- `Python` `BEIR` `bge` `Qwen3` `cross-encoders` · [interactive guide](https://sandeepvijayarao09.github.io/RAG/)
 
 **[Anu](https://github.com/sandeepvijayarao09/Anu-iOS)**: an on-device agent for iOS, and the Swift Student Challenge 2026 winner
 - Gemma 4 E4B runs locally through LiteRT.
