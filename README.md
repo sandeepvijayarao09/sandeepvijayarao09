@@ -41,6 +41,15 @@ I train and fine-tune small models, run them on phones and laptops, and measure 
 - Few-shot recalibration, which does need labels, still does better at +0.106.
 - `Python` `Nemotron` `Crusoe Inference`
 
+**[closed-loop-bps](https://github.com/sandeepvijayarao09/closed-loop-bps)**: does offline decoding accuracy predict how well a brain-computer interface (BCI) cursor actually works?
+- I built cursor decoders on NLB MC_Maze, replicated the results on MC_RTT, and scored them in a simulated Webgrid task (BPS: bits per second).
+- **Result:**
+  - A lag-augmented Kalman filter reached 3.07 BPS [2.97, 3.16], against a 9.24 BPS oracle.
+  - GRUs with higher offline R² (0.85–0.88) reached only 0.47–0.79 BPS.
+  - So offline accuracy is a poor guide to closed-loop control.
+- **Method:** every table and figure is regenerated from committed JSON, and C++/Python parity tests run in CI.
+- `PyTorch` `Kalman filters` `GRU` `C++` `NLB`
+
 **[Dual LLM Router](https://github.com/sandeepvijayarao09/dual-llm-system)**: a cascade router that decides whether each query goes to GPT-4o-mini or GPT-4o
 - The router scores 92.6% routing accuracy.
 - My follow-up ablation found that a one-line word-count rule gets 89.7%, and the confidence intervals overlap.
@@ -75,7 +84,7 @@ I train and fine-tune small models, run them on phones and laptops, and measure 
 | Project | What it is |
 |---|---|
 | [Omni-Axon](https://github.com/sandeepvijayarao09/Omni-Axon) | Built at the Stanford x DeepMind hackathon. A Gemini orchestrator that routes each request to a direct answer, a saved multi-agent workflow, or a new agent team |
-| [omniq-atlas](https://github.com/sandeepvijayarao09/omniq-atlas) | Built at the SFTW Harness Engineering hackathon. A governed AI assistant for organizations, on MongoDB Atlas, whose harness improves itself |
+| [omniq](https://github.com/sandeepvijayarao09/omniq) | Built at the SFTW Harness Engineering hackathon. A governed AI assistant for organizations, on MongoDB Atlas, whose harness improves itself |
 
 ---
 
