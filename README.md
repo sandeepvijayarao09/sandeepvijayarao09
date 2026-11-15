@@ -88,6 +88,17 @@ I train and fine-tune small models, run them on phones and laptops, and measure 
 
 ---
 
+## Open-source contributions
+
+**Merged (9):**
+- **apple/swift-collections** (7): fixed a double destroy in `UniqueDictionary.updateValue(forKey:with:)` ([#836](https://github.com/apple/swift-collections/pull/836)), `memoizedValue` returning another key's value ([#835](https://github.com/apple/swift-collections/pull/835)), an empty root left behind after root-key removal in sorted collections ([#829](https://github.com/apple/swift-collections/pull/829)), plus [#838](https://github.com/apple/swift-collections/pull/838) and [#831](https://github.com/apple/swift-collections/pull/831). Also added differential fuzz tests for the hashed and sorted containers ([#837](https://github.com/apple/swift-collections/pull/837), [#839](https://github.com/apple/swift-collections/pull/839)).
+- **tensorflow/tflite-micro**: int8 `SPACE_TO_BATCH_ND` padding now uses the output zero point ([#3973](https://github.com/tensorflow/tflite-micro/pull/3973)).
+- **aurelio-labs/semantic-router**: `AutoEncoder` now builds default-named encoders ([#827](https://github.com/aurelio-labs/semantic-router/pull/827)).
+
+**In review (24):** Apple (coremltools, swift-collections, swift-distributed-actors, swift-numerics), swiftlang/swift-subprocess, Microsoft (onnxruntime, onnxruntime-genai), Google AI Edge (LiteRT, litert-torch), NVIDIA (llm-router, Switchyard, Personal-AI-Router, auto-ontology), Keras, MLX Swift, LiteLLM and Argmax. [All PRs](https://github.com/pulls?q=is%3Apr+author%3Asandeepvijayarao09+-user%3Asandeepvijayarao09)
+
+---
+
 ## Background
 
 - **AI Developer, Trominosoft** (2025): LLM orchestration and retrieval services on GCP and Kubernetes
